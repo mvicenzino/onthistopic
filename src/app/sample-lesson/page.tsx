@@ -18,13 +18,14 @@ export default function SampleLessonPage() {
   return (
     <>
       {/* ───────────────────────── Lesson Header ───────────────────────── */}
-      <SectionWrapper className="bg-dark-base py-20 md:py-28">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <SectionWrapper className="bg-dark-base py-20 md:py-28 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] gold-glow pointer-events-none" />
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center">
             <span className="inline-block rounded-full bg-gold/10 px-3 py-1 font-mono text-xs uppercase tracking-widest text-gold">
               Sample Lesson
             </span>
-            <h1 className="mt-4 font-display text-4xl font-bold text-white md:text-5xl">
+            <h1 className="mt-4 font-display text-4xl font-bold text-white md:text-5xl lg:text-6xl">
               Learning From Failure
             </h1>
             <p className="mt-3 text-white/50">

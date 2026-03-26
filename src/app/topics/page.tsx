@@ -29,12 +29,13 @@ export default function TopicsPage() {
   return (
     <main>
       {/* Hero */}
-      <SectionWrapper className="bg-dark-surface py-24 md:py-32">
-        <div className="mx-auto max-w-4xl px-6 text-center">
+      <SectionWrapper className="bg-dark-surface py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] gold-glow pointer-events-none" />
+        <div className="mx-auto max-w-4xl px-6 text-center relative">
           <span className="text-xs uppercase tracking-[0.2em] text-gold font-mono">
             Topics
           </span>
-          <h1 className="mt-4 font-display text-4xl md:text-5xl text-white">
+          <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-white">
             Workplace Performance Topics
           </h1>
           <p className="mt-6 text-lg text-white/70 max-w-3xl mx-auto">

@@ -47,7 +47,7 @@ export function Footer() {
               Stay sharp. Get leadership insights.
             </h3>
             <div className="mt-4">
-              <EmailCapture dark />
+              <EmailCapture variant="dark" />
             </div>
           </div>
         </div>

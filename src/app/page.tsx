@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import {
-  ChevronDown,
   User,
   Users,
   MessageSquare,
@@ -14,25 +13,41 @@ import {
 } from 'lucide-react'
 import { CTAButton } from '@/components/shared/CTAButton'
 import { StatCounter } from '@/components/shared/StatCounter'
-import { TestimonialCard } from '@/components/shared/TestimonialCard'
 import { TopicCard } from '@/components/shared/TopicCard'
+import { TestimonialCarousel } from '@/components/shared/TestimonialCarousel'
 import { EmailCapture } from '@/components/shared/EmailCapture'
 import { SectionWrapper } from '@/components/shared/SectionWrapper'
 import { topics } from '@/lib/data/topics'
 
-const stagger = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
+const useCases = [
+  {
+    icon: User,
+    title: 'Individual Growth',
+    description:
+      'Self-guided development at your own pace, on any device. Build a personal learning path aligned to your goals.',
   },
-}
+  {
+    icon: Users,
+    title: 'Team Development',
+    description:
+      'Shared lessons that spark real conversations and build common language across your team.',
+  },
+  {
+    icon: MessageSquare,
+    title: 'Performance Conversations',
+    description:
+      'A structured way to connect development to day-to-day work and drive real behavior change.',
+  },
+]
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' as const } },
-}
+const buildItems = [
+  'Decision-making under pressure',
+  'Trust, communication & accountability',
+  'Healthier performance conversations',
+  'Shared performance language',
+  'Resilience through challenge',
+  'Ownership and execution',
+]
 
 export default function HomePage() {
   return (
@@ -53,333 +68,257 @@ export default function HomePage() {
         }}
       />
 
-      {/* ───────────────────────── Hero ───────────────────────── */}
-      <section className="relative flex min-h-screen items-center justify-center bg-dark-base overflow-hidden">
+      {/* ───────────────────────── SECTION 1: Hero ───────────────────────── */}
+      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-gradient-to-b from-dark-base via-dark-surface to-dark-base">
         {/* Grain texture overlay */}
-        <div
-          className="pointer-events-none absolute inset-0 opacity-20"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E\")",
-          }}
-        />
-        {/* Subtle diagonal gradient */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-dark-base via-dark-base to-dark-card/40" />
+        <div className="grain-overlay" />
+        {/* Grid scoreboard subtle pattern */}
+        <div className="grid-scoreboard" />
+        {/* Gold radial glow behind headline */}
+        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[400px] md:w-[700px] md:h-[500px] gold-glow pointer-events-none" />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-col items-center"
-          >
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="max-w-5xl">
+            {/* Staggered entrance with blur-to-clear */}
             <motion.h1
-              variants={fadeUp}
-              className="font-display text-5xl font-black text-white max-w-4xl md:text-7xl"
+              className="font-display font-black text-white text-5xl md:text-7xl lg:text-[110px] xl:text-[120px] leading-[0.9] tracking-tight"
+              initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
             >
-              Leadership Lessons Earned on the World&apos;s Biggest Stages.
+              Leadership Lessons{' '}
+              <span className="text-gold">Earned</span> on the
+              World&rsquo;s Biggest Stages.
             </motion.h1>
 
             <motion.p
-              variants={fadeUp}
-              className="mt-6 max-w-2xl font-body text-lg text-white/70 md:text-xl"
+              className="mt-8 text-lg md:text-xl text-ice-blue/80 max-w-xl font-body"
+              initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
             >
-              Bite-size, story-based lessons from elite sport athletes, coaches, and
-              executives — building the performance culture your teams need.
+              Bite-size, story-based lessons from elite sport athletes, coaches,
+              and executives — building the performance culture your teams need.
             </motion.p>
 
             <motion.div
-              variants={fadeUp}
-              className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
+              className="mt-10 flex flex-col sm:flex-row gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <CTAButton href="/sample-lesson" variant="primary" size="lg" dark>
+              <CTAButton href="/sample-lesson" variant="premium" size="xl">
                 Watch a Sample Lesson
               </CTAButton>
-              <CTAButton href="/contact" variant="secondary" size="lg" dark>
+              <CTAButton href="/contact" variant="secondary" size="lg">
                 Book a Demo
               </CTAButton>
             </motion.div>
 
             <motion.p
-              variants={fadeUp}
-              className="mt-12 text-xs uppercase tracking-[0.2em] text-white/50 font-mono"
+              className="mt-12 text-xs uppercase tracking-[0.2em] text-white/40 font-mono"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
             >
               Trusted by L&amp;D leaders at Fortune 500 organizations
             </motion.p>
-          </motion.div>
+          </div>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-        >
-          <ChevronDown className="h-6 w-6 text-white/40" />
-        </motion.div>
+        {/* Stats bar integrated at bottom of hero */}
+        <div className="relative z-10 mt-auto bg-dark-elevated/80 backdrop-blur-xl border-t border-white/10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <StatCounter value={50} suffix="+" label="Lessons" />
+              <StatCounter value={5} label="Topic Areas" />
+              <div className="text-center">
+                <div className="text-5xl md:text-6xl lg:text-7xl font-mono font-bold text-gold">3&ndash;5</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-white/60 font-mono mt-2">Min Per Lesson</div>
+              </div>
+              <div className="text-center">
+                <div className="text-5xl md:text-6xl lg:text-7xl font-mono font-bold text-gold">100%</div>
+                <div className="text-xs uppercase tracking-[0.2em] text-white/60 font-mono mt-2">First-Person</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* ───────────────────────── Stats Bar ───────────────────────── */}
-      <SectionWrapper className="bg-dark-elevated py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            <StatCounter value={50} suffix="+" label="Lessons" />
-            <StatCounter value={5} label="Topic Areas" />
-
-            {/* Text-based stats styled to match StatCounter */}
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="font-mono text-4xl font-bold text-gold md:text-5xl">
-                3&ndash;5
-              </div>
-              <div className="mt-2 text-sm uppercase tracking-wider text-white">
-                Min / Per Lesson
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="font-mono text-4xl font-bold text-gold md:text-5xl">
-                100%
-              </div>
-              <div className="mt-2 text-sm uppercase tracking-wider text-white">
-                First-Person
-              </div>
-            </motion.div>
-          </div>
+      {/* ───────────────────────── SECTION 2: Trust Strip ───────────────────────── */}
+      <div className="bg-dark-base border-y border-gold/10 py-5 overflow-hidden">
+        <div className="flex animate-marquee whitespace-nowrap">
+          {[...Array(2)].map((_, i) => (
+            <div key={i} className="flex items-center gap-8 px-4 text-sm font-mono uppercase tracking-[0.3em] text-gold/60">
+              <span>Healthcare</span><span className="text-gold/30">&middot;</span>
+              <span>Technology</span><span className="text-gold/30">&middot;</span>
+              <span>Financial Services</span><span className="text-gold/30">&middot;</span>
+              <span>Media &amp; Entertainment</span><span className="text-gold/30">&middot;</span>
+              <span>Professional Services</span><span className="text-gold/30">&middot;</span>
+              <span>Manufacturing</span><span className="text-gold/30">&middot;</span>
+              <span>Trusted by Leaders Across Industries</span><span className="text-gold/30">&middot;</span>
+            </div>
+          ))}
         </div>
-      </SectionWrapper>
+      </div>
 
-      {/* ───────────────────────── Trust Logo Strip ───────────────────────── */}
-      <SectionWrapper className="bg-dark-surface py-12">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <p className="mb-8 text-sm uppercase tracking-wider text-white/40">
-            Organizations building stronger teams with On This Topic
-          </p>
-          <div className="grid grid-cols-3 gap-4 md:grid-cols-6">
-            {[
-              'Healthcare',
-              'Technology',
-              'Financial Services',
-              'Media & Entertainment',
-              'Professional Services',
-              'Manufacturing',
-            ].map((label) => (
-              <div
-                key={label}
-                className="flex h-[60px] w-full items-center justify-center rounded-lg bg-white/5 border border-white/10"
-              >
-                <span className="text-xs font-mono text-white/30">{label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </SectionWrapper>
-
-      {/* ───────────────────────── How People Use It ───────────────────────── */}
-      <SectionWrapper className="bg-dark-base py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl md:text-4xl text-white">
+      {/* ───────────────────────── SECTION 3: How People Use It ───────────────────────── */}
+      <SectionWrapper className="bg-dark-base py-20 md:py-28" transition="slideLeft">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-white font-bold">
             How People Use It
           </h2>
+          <div className="w-24 h-1.5 bg-gold mt-4 rounded-full" />
+        </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-            {[
-              {
-                Icon: User,
-                title: 'Individual Growth',
-                description:
-                  'Self-guided development at your own pace, on any device.',
-              },
-              {
-                Icon: Users,
-                title: 'Team Development',
-                description:
-                  'Shared lessons that spark real conversations and build common language.',
-              },
-              {
-                Icon: MessageSquare,
-                title: 'Performance Conversations',
-                description:
-                  'A structured way to connect development to day-to-day work.',
-              },
-            ].map(({ Icon, title, description }) => (
-              <div
-                key={title}
-                className="rounded-xl bg-white/5 backdrop-blur-md border border-white/10 p-8"
-              >
-                <Icon className="h-8 w-8 text-gold" />
-                <h3 className="mt-4 font-display text-xl mb-2 text-white">{title}</h3>
-                <p className="text-white/70">{description}</p>
+        <div className="mt-12 flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 px-4 sm:px-6 lg:px-8 scrollbar-hide">
+          {useCases.map((card, i) => (
+            <motion.div
+              key={card.title}
+              className="min-w-[85vw] md:min-w-[60vw] lg:min-w-[45vw] snap-center flex-shrink-0 relative rounded-2xl bg-gradient-to-br from-dark-card to-dark-elevated border border-white/10 p-10 md:p-14 overflow-hidden"
+              whileHover={{ y: -4 }}
+            >
+              {/* Big decorative number */}
+              <span className="absolute top-6 right-8 font-mono text-8xl text-gold/10 select-none">
+                0{i + 1}
+              </span>
+              <div className="relative z-10">
+                <card.icon className="w-12 h-12 text-gold" />
+                <h3 className="font-display text-2xl md:text-3xl text-white mt-6">{card.title}</h3>
+                <p className="text-white/70 text-lg mt-4 max-w-md">{card.description}</p>
               </div>
-            ))}
-          </div>
+            </motion.div>
+          ))}
         </div>
       </SectionWrapper>
 
-      {/* ───────────────────────── What It Builds ───────────────────────── */}
-      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
-            {/* Left: pull quote */}
-            <div className="flex items-center">
-              <p className="font-display text-3xl leading-tight text-white md:text-4xl">
-                &ldquo;We don&apos;t teach theory. We share what elite performers
-                have learned under real pressure — and translate it into lessons your
-                teams can use tomorrow.&rdquo;
+      {/* ───────────────────────── SECTION 4: What It Builds ───────────────────────── */}
+      <SectionWrapper className="relative bg-dark-surface py-20 md:py-28 overflow-hidden" transition="fadeUp">
+        <div className="grid-scoreboard" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+            {/* Left: massive quote — 3 cols */}
+            <div className="lg:col-span-3">
+              <p className="font-display text-3xl md:text-4xl lg:text-5xl leading-tight text-white">
+                We don&rsquo;t teach theory. We share what elite performers have learned under{' '}
+                <span className="text-gold">real pressure</span> — and translate it into lessons your teams can use tomorrow.
               </p>
             </div>
 
-            {/* Right: checklist */}
-            <div className="flex items-center">
-              <ul className="space-y-5">
-                {[
-                  'Decision-making under pressure',
-                  'Trust, communication & accountability',
-                  'Healthier performance conversations',
-                  'Shared performance language',
-                  'Resilience through challenge',
-                  'Ownership and execution',
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
-                    <span className="text-white/70">{item}</span>
-                  </li>
-                ))}
-              </ul>
+            {/* Gold vertical divider — hidden on mobile */}
+            <div className="hidden lg:flex justify-center">
+              <div className="w-px h-full bg-gradient-to-b from-transparent via-gold to-transparent" />
+            </div>
+
+            {/* Right: checklist — 1 col */}
+            <div className="space-y-5">
+              {buildItems.map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-gold mt-0.5 flex-shrink-0" />
+                  <span className="text-white/80 text-lg">{item}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </SectionWrapper>
 
-      {/* ───────────────────────── Topic Preview ───────────────────────── */}
-      <SectionWrapper className="bg-dark-base py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl md:text-4xl text-white">
+      {/* ───────────────────────── SECTION 5: Topic Preview ───────────────────────── */}
+      <SectionWrapper className="bg-dark-base py-20 md:py-28" transition="slideRight">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-white font-bold">
             Explore by Topic
           </h2>
+          <p className="text-ice-blue/60 text-lg mt-3 max-w-xl">
+            Five core areas of workplace performance, explored through lessons earned in elite sport.
+          </p>
+          <div className="w-24 h-1.5 bg-gold mt-4 rounded-full" />
 
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {topics.slice(0, 3).map((topic) => (
-              <TopicCard key={topic.slug} {...topic} />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
+            {topics.slice(0, 3).map((topic, i) => (
+              <div key={topic.slug} className={i === 1 ? 'md:mt-12' : i === 2 ? 'md:mt-6' : ''}>
+                <TopicCard {...topic} index={i} />
+              </div>
             ))}
           </div>
-          <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 md:mx-auto md:max-w-2xl lg:max-w-3xl">
-            {topics.slice(3, 5).map((topic) => (
-              <TopicCard key={topic.slug} {...topic} />
-            ))}
-          </div>
-        </div>
-      </SectionWrapper>
-
-      {/* ───────────────────────── Why It Works ───────────────────────── */}
-      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl md:text-4xl text-white">
-            Why On This Topic Works
-          </h2>
-
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                Icon: Brain,
-                title: 'Improved Recall',
-                stat: '22x better retention',
-                description:
-                  "Stories activate memory in ways data alone can't. Research shows story-based learning dramatically outperforms traditional formats.",
-              },
-              {
-                Icon: Clock,
-                title: 'Fits Real Workdays',
-                stat: '3\u20135 minutes',
-                description:
-                  'No scheduling conflicts. No lengthy modules. Lessons designed to fit between meetings.',
-              },
-              {
-                Icon: Trophy,
-                title: 'Elite Credibility',
-                stat: 'Earned under pressure',
-                description:
-                  "Every lesson comes from someone who performed on the world's biggest stages. Real stakes. Real insight.",
-              },
-              {
-                Icon: Rocket,
-                title: 'Work-Ready Insight',
-                stat: 'Apply tomorrow',
-                description:
-                  'Lessons are designed for action, not theory. Watch, reflect, discuss, apply.',
-              },
-            ].map(({ Icon, title, stat, description }) => (
-              <div
-                key={title}
-                className="rounded-xl bg-white/5 backdrop-blur-md border border-white/10 p-6"
-              >
-                <Icon className="h-8 w-8 text-gold" />
-                <h3 className="mt-4 font-display text-lg text-white">{title}</h3>
-                <p className="mt-1 font-mono text-sm text-gold">{stat}</p>
-                <p className="mt-3 text-sm text-white/70 leading-relaxed">
-                  {description}
-                </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 max-w-3xl mx-auto">
+            {topics.slice(3).map((topic, i) => (
+              <div key={topic.slug} className={i === 1 ? 'md:mt-8' : ''}>
+                <TopicCard {...topic} index={i + 3} />
               </div>
             ))}
           </div>
         </div>
       </SectionWrapper>
 
-      {/* ───────────────────────── Testimonials ───────────────────────── */}
-      <SectionWrapper className="bg-dark-base py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl md:text-4xl text-white">
-            What L&amp;D Leaders Say
+      {/* ───────────────────────── SECTION 6: Why It Works ───────────────────────── */}
+      <SectionWrapper className="bg-dark-surface py-20 md:py-28" transition="fadeUp">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-white font-bold">
+            Why It Works
           </h2>
+          <div className="w-24 h-1.5 bg-gold mt-4 rounded-full" />
 
-          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-            <TestimonialCard
-              quote="My team could not love this more."
-              name="Belinda Walker"
-              role="L&D Executive"
-              company="Fortune 500"
-            />
-            <TestimonialCard
-              quote="The courses are short, entertaining and sticky."
-              name="S. Logan"
-              role="L&D Specialist"
-              company="Fortune 1000"
-            />
-            <TestimonialCard
-              quote="My employees thank me."
-              name="J. Walker"
-              role="Director of L&D"
-              company="Global 2000"
-            />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-14">
+            {/* Featured pillar — spans 2 cols */}
+            <div className="lg:col-span-2 rounded-2xl bg-gradient-to-br from-gold/10 to-dark-card border border-gold/20 p-10 md:p-14">
+              <Brain className="w-10 h-10 text-gold" />
+              <h3 className="font-display text-2xl md:text-3xl text-white mt-4">Improved Recall</h3>
+              <div className="font-mono text-5xl md:text-6xl text-gold mt-4">22&times;</div>
+              <p className="text-white/60 text-sm font-mono uppercase tracking-wider mt-1">better retention</p>
+              <p className="text-white/70 text-lg mt-6 max-w-lg">
+                Stories activate memory in ways data alone can&rsquo;t. Research shows story-based learning dramatically outperforms traditional formats.
+              </p>
+            </div>
+
+            {/* 3 compact cards stacked */}
+            <div className="space-y-6">
+              <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
+                <Clock className="w-8 h-8 text-gold" />
+                <h3 className="font-display text-xl text-white mt-3">Fits Real Workdays</h3>
+                <div className="font-mono text-2xl text-gold mt-2">3&ndash;5 min</div>
+                <p className="text-white/60 text-sm mt-2">No scheduling conflicts. Lessons fit between meetings.</p>
+              </div>
+              <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
+                <Trophy className="w-8 h-8 text-gold" />
+                <h3 className="font-display text-xl text-white mt-3">Elite Credibility</h3>
+                <div className="font-mono text-2xl text-gold mt-2">Earned under pressure</div>
+                <p className="text-white/60 text-sm mt-2">Real stakes. Real insight. The world&rsquo;s biggest stages.</p>
+              </div>
+              <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
+                <Rocket className="w-8 h-8 text-gold" />
+                <h3 className="font-display text-xl text-white mt-3">Work-Ready Insight</h3>
+                <div className="font-mono text-2xl text-gold mt-2">Apply tomorrow</div>
+                <p className="text-white/60 text-sm mt-2">Watch, reflect, discuss, apply. Action, not theory.</p>
+              </div>
+            </div>
           </div>
         </div>
       </SectionWrapper>
 
-      {/* ───────────────────────── Email Capture ───────────────────────── */}
-      <SectionWrapper className="bg-dark-card py-20 md:py-28">
-        <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-3xl text-white">
+      {/* ───────────────────────── SECTION 7: Testimonials ───────────────────────── */}
+      <SectionWrapper className="bg-dark-base py-20 md:py-28" transition="fadeIn">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <TestimonialCarousel />
+        </div>
+      </SectionWrapper>
+
+      {/* ───────────────────────── SECTION 8: Email Capture ───────────────────────── */}
+      <section className="relative bg-gold py-20 md:py-28 overflow-hidden">
+        <div className="grain-overlay opacity-10" />
+        <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-display text-3xl md:text-4xl font-black text-navy-dark">
             Get 3 Free Sample Lessons
           </h2>
-          <div className="mt-8">
-            <EmailCapture dark />
-          </div>
-          <p className="mt-4 text-sm text-white/50">
-            No spam. Unsubscribe anytime.
+          <p className="mt-4 text-navy/70 text-lg">
+            See what story-based leadership development looks like in action.
           </p>
+          <div className="mt-8">
+            <EmailCapture variant="gold" />
+          </div>
+          <p className="mt-4 text-navy/50 text-sm">No spam. Unsubscribe anytime.</p>
         </div>
-      </SectionWrapper>
+      </section>
     </>
   )
 }

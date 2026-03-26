@@ -71,8 +71,9 @@ const orgApplications = [
 export default function WorkplacePerformancePage() {
   return (
     <>
-      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <SectionWrapper className="bg-dark-surface py-20 md:py-28 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] gold-glow pointer-events-none" />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[250px_1fr]">
             {/* ─── Table of Contents ─── */}
             <nav className="hidden lg:block">
@@ -110,7 +111,7 @@ export default function WorkplacePerformancePage() {
 
               {/* Section 1 */}
               <section id="what-is" className="mb-16">
-                <h2 className="font-display text-2xl font-bold text-white md:text-3xl">
+                <h2 className="font-display text-2xl font-bold text-white md:text-3xl lg:text-4xl">
                   What Is Workplace Performance Development?
                 </h2>
                 <p className="mt-6 font-body leading-relaxed text-white/70">

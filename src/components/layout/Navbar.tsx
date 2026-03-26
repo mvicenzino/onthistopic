@@ -17,12 +17,15 @@ const navLinks = [
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
+  const [scrollProgress, setScrollProgress] = useState(0)
   const [mobileOpen, setMobileOpen] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
+      const progress = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)
+      setScrollProgress(progress)
     }
     handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -46,9 +49,15 @@ export function Navbar() {
 
   return (
     <>
+      <div className="fixed top-0 left-0 right-0 z-[60] h-[2px] bg-dark-base/50">
+        <div
+          className="h-full bg-gold origin-left"
+          style={{ transform: `scaleX(${scrollProgress})` }}
+        />
+      </div>
       <nav
         className={cn(
-          'fixed top-0 w-full z-50 transition-all duration-300',
+          'fixed top-[2px] w-full z-50 transition-all duration-300',
           scrolled
             ? 'backdrop-blur-xl bg-dark-base/95 border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.3)] text-white'
             : 'backdrop-blur-xl bg-dark-base/80 border-b border-white/5 text-white'
@@ -76,7 +85,7 @@ export function Navbar() {
             <div className="hidden lg:block">
               <Link
                 href="/sample-lesson"
-                className="inline-flex items-center rounded-full backdrop-blur-xl bg-gold/20 border border-gold/30 text-gold px-5 py-2.5 text-sm font-semibold transition-all duration-300 hover:bg-gold/30 hover:shadow-[0_0_15px_rgba(201,168,76,0.25)]"
+                className="inline-flex items-center bg-gold text-navy-dark font-semibold hover:bg-gold-light hover:shadow-[0_0_20px_rgba(201,168,76,0.3)] rounded-full px-5 py-2.5 text-sm transition-all duration-300"
               >
                 Watch a Sample Lesson
                 <span className="ml-1.5" aria-hidden="true">&rarr;</span>
@@ -127,7 +136,7 @@ export function Navbar() {
             <Link
               href="/sample-lesson"
               onClick={() => setMobileOpen(false)}
-              className="mt-4 inline-flex items-center rounded-full backdrop-blur-xl bg-gold/20 border border-gold/30 text-gold px-8 py-3 text-lg font-semibold transition-all duration-300 hover:bg-gold/30 hover:shadow-[0_0_15px_rgba(201,168,76,0.25)]"
+              className="mt-4 inline-flex items-center bg-gold text-navy-dark font-semibold hover:bg-gold-light hover:shadow-[0_0_20px_rgba(201,168,76,0.3)] rounded-full px-8 py-3 text-lg transition-all duration-300"
             >
               Watch a Sample Lesson
               <span className="ml-2" aria-hidden="true">&rarr;</span>

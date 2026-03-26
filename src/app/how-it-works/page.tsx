@@ -97,12 +97,13 @@ export default function HowItWorksPage() {
   return (
     <>
       {/* ───────────────────────── Hero ───────────────────────── */}
-      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+      <SectionWrapper className="bg-dark-surface py-20 md:py-28 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] gold-glow pointer-events-none" />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative">
           <p className="text-sm font-mono uppercase tracking-[0.2em] text-gold">
             How It Works
           </p>
-          <h1 className="mt-4 font-display text-4xl md:text-5xl text-white">
+          <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-white">
             A Simple, Flexible Learning Experience
           </h1>
           <p className="mt-6 mx-auto max-w-2xl text-lg text-white/70">

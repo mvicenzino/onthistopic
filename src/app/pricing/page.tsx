@@ -116,19 +116,19 @@ export default function PricingPage() {
                 key={tier.name}
                 className={`relative rounded-2xl border p-8 ${
                   tier.popular
-                    ? 'border-2 border-gold/60 shadow-[0_0_30px_rgba(201,168,76,0.15)]'
+                    ? 'border-2 border-gold bg-gradient-to-b from-gold/10 to-dark-card md:scale-105 md:z-10 shadow-[0_0_30px_rgba(201,168,76,0.15)]'
                     : 'border-white/10'
                 }`}
               >
                 {tier.popular && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gold px-3 py-1 font-mono text-xs font-semibold text-navy">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gold px-4 py-1.5 font-mono text-sm font-bold text-navy">
                     Most Popular
                   </span>
                 )}
                 <h3 className="font-display text-xl text-white">{tier.name}</h3>
                 <p className="mt-1 text-sm text-white/50">{tier.range}</p>
                 <div className="mt-6">
-                  <span className="font-display text-4xl font-bold text-white">
+                  <span className={`font-display font-bold text-white ${tier.popular ? 'text-5xl md:text-6xl' : 'text-4xl'}`}>
                     ${tier.price}
                   </span>
                   <span className="text-sm text-white/50">/participant</span>

@@ -19,7 +19,7 @@ export default function AboutPage() {
           <span className="text-xs uppercase tracking-[0.2em] text-gold font-mono">
             About
           </span>
-          <h1 className="mt-4 font-display text-4xl md:text-5xl text-white">
+          <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-[80px] leading-[0.95] text-white">
             High Achievers. Lived Experiences. Actionable Lessons.
           </h1>
           <p className="mt-6 text-lg text-white/70 max-w-3xl mx-auto">
@@ -31,22 +31,16 @@ export default function AboutPage() {
 
       {/* Founder Section */}
       <SectionWrapper className="bg-dark-base py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Karen DePodesta */}
-            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10">
-              <ImagePlaceholder
-                label="Karen DePodesta"
-                aspect="1/1"
-                className="w-32 h-32 rounded-full mx-auto mb-6"
-              />
-              <h2 className="font-display text-2xl text-center text-white">
-                Karen DePodesta
-              </h2>
-              <p className="text-gold text-center font-mono text-sm uppercase tracking-wider mt-1">
-                Co-Founder
-              </p>
-              <p className="text-white/70 leading-relaxed mt-4">
+        <div className="mx-auto max-w-6xl px-6 space-y-0">
+          {/* Karen DePodesta — image left, text right */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+            <div className="lg:col-span-2">
+              <ImagePlaceholder label="Karen DePodesta" aspect="1/1" className="rounded-2xl max-w-sm mx-auto lg:mx-0" />
+            </div>
+            <div className="lg:col-span-3">
+              <div className="font-mono text-sm uppercase tracking-[0.2em] text-gold">Co-Founder</div>
+              <h3 className="font-display text-3xl md:text-4xl text-white mt-2">Karen DePodesta</h3>
+              <p className="text-white/70 text-lg leading-relaxed mt-6">
                 Karen has spent over two decades immersed in the world of elite
                 professional sport, developing a rare perspective on what
                 separates high performers from the rest. Her access to NFL, MLB,
@@ -62,7 +56,7 @@ export default function AboutPage() {
                 provided an unparalleled window into how elite organizations
                 build and sustain winning cultures.
               </p>
-              <div className="flex justify-center mt-4">
+              <div className="mt-4">
                 <a
                   href="https://www.linkedin.com/in/karendepodesta"
                   target="_blank"
@@ -81,21 +75,17 @@ export default function AboutPage() {
                 </a>
               </div>
             </div>
+          </div>
 
-            {/* Michelle Tannenbaum */}
-            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10">
-              <ImagePlaceholder
-                label="Michelle Tannenbaum"
-                aspect="1/1"
-                className="w-32 h-32 rounded-full mx-auto mb-6"
-              />
-              <h2 className="font-display text-2xl text-center text-white">
-                Michelle Tannenbaum
-              </h2>
-              <p className="text-gold text-center font-mono text-sm uppercase tracking-wider mt-1">
-                Co-Founder
-              </p>
-              <p className="text-white/70 leading-relaxed mt-4">
+          {/* Gold divider */}
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-gold to-transparent my-16" />
+
+          {/* Michelle Tannenbaum — text left, image right */}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+            <div className="lg:col-span-3">
+              <div className="font-mono text-sm uppercase tracking-[0.2em] text-gold">Co-Founder</div>
+              <h3 className="font-display text-3xl md:text-4xl text-white mt-2">Michelle Tannenbaum</h3>
+              <p className="text-white/70 text-lg leading-relaxed mt-6">
                 Michelle has spent years inside the culture of
                 championship-level professional football, learning the
                 discipline, leadership, and performance standards that define
@@ -110,7 +100,7 @@ export default function AboutPage() {
                 This Topic to bring those hard-won insights into the
                 organizations and teams that need them most.
               </p>
-              <div className="flex justify-center mt-4">
+              <div className="mt-4">
                 <a
                   href="https://www.linkedin.com/in/michelletannenbaum"
                   target="_blank"
@@ -128,6 +118,9 @@ export default function AboutPage() {
                   </svg>
                 </a>
               </div>
+            </div>
+            <div className="lg:col-span-2">
+              <ImagePlaceholder label="Michelle Tannenbaum" aspect="1/1" className="rounded-2xl max-w-sm mx-auto lg:mx-0" />
             </div>
           </div>
         </div>

@@ -19,10 +19,10 @@ export function LogoWordmark({ size = 'md', className }: LogoWordmarkProps) {
   return (
     <Link
       href="/"
-      className={cn('inline-flex items-center gap-2', className)}
+      className={cn('inline-flex items-center gap-2.5', className)}
     >
       <Logo size={config.icon} />
-      <span className={cn('font-display font-bold tracking-tight', config.text)}>
+      <span className={cn('font-display font-black tracking-tight', config.text)}>
         On This Topic
       </span>
     </Link>

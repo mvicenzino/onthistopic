@@ -7,7 +7,7 @@ interface TestimonialCardProps {
 
 export function TestimonialCard({ quote, name, role, company }: TestimonialCardProps) {
   return (
-    <div className="rounded-xl bg-white/5 backdrop-blur-md border border-white/10 p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+    <div className="rounded-xl bg-white/5 backdrop-blur-md border border-white/10 border-l-[3px] border-l-gold p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
       <span className="font-display text-8xl leading-none text-gold" aria-hidden="true">
         &ldquo;
       </span>

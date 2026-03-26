@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useAnimationControls } from 'framer-motion'
 
 interface StatCounterProps {
   value: number
@@ -14,6 +14,7 @@ export function StatCounter({ value, suffix = '', prefix = '', label }: StatCoun
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-50px' })
   const [displayValue, setDisplayValue] = useState(0)
+  const controls = useAnimationControls()
 
   useEffect(() => {
     if (!isInView) return
@@ -29,11 +30,13 @@ export function StatCounter({ value, suffix = '', prefix = '', label }: StatCoun
 
       if (progress < 1) {
         requestAnimationFrame(animate)
+      } else {
+        controls.start({ scale: [1, 1.08, 1], transition: { duration: 0.3 } })
       }
     }
 
     requestAnimationFrame(animate)
-  }, [isInView, value])
+  }, [isInView, value, controls])
 
   return (
     <motion.div
@@ -44,10 +47,13 @@ export function StatCounter({ value, suffix = '', prefix = '', label }: StatCoun
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <div className="font-mono text-4xl font-bold text-gold md:text-5xl">
+      <motion.div
+        animate={controls}
+        className="font-mono text-5xl font-bold text-gold md:text-6xl lg:text-7xl"
+      >
         {prefix}{displayValue}{suffix}
-      </div>
-      <div className="mt-2 text-sm uppercase tracking-wider text-white">
+      </motion.div>
+      <div className="text-xs uppercase tracking-[0.2em] text-white/60 font-mono mt-2">
         {label}
       </div>
     </motion.div>
