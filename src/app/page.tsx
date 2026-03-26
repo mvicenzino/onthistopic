@@ -83,11 +83,16 @@ export default function HomePage() {
       />
 
       {/* ───────────────────────── SECTION 1: Hero ───────────────────────── */}
-      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-gradient-to-b from-navy-dark via-navy to-navy-dark">
+      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-navy-dark">
+        {/* Talent banner background — photo collage of elite sport leaders */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{ backgroundImage: "url('/images/talentbanner.png')" }}
+        />
+        {/* Dark gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-dark/80 via-navy/70 to-navy-dark" />
         {/* Grain texture overlay */}
         <div className="grain-overlay" />
-        {/* Grid scoreboard subtle pattern */}
-        <div className="grid-scoreboard" />
         {/* Gold radial glow behind headline */}
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[400px] md:w-[700px] md:h-[500px] gold-glow pointer-events-none" />
 
