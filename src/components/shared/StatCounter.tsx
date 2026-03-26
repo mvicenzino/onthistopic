@@ -49,11 +49,11 @@ export function StatCounter({ value, suffix = '', prefix = '', label }: StatCoun
     >
       <motion.div
         animate={controls}
-        className="font-mono text-3xl sm:text-4xl font-bold text-gold md:text-5xl lg:text-6xl"
+        className="font-mono text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gold"
       >
         {prefix}{displayValue}{suffix}
       </motion.div>
-      <div className="text-xs uppercase tracking-[0.2em] text-white/60 font-mono mt-2">
+      <div className="text-[10px] md:text-xs uppercase tracking-[0.15em] md:tracking-[0.2em] text-white/60 font-mono mt-1 md:mt-2">
         {label}
       </div>
     </motion.div>

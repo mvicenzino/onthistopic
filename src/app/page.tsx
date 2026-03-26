@@ -83,7 +83,7 @@ export default function HomePage() {
       />
 
       {/* ───────────────────────── SECTION 1: Hero ───────────────────────── */}
-      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-navy-dark">
+      <section className="relative min-h-[85vh] md:min-h-screen flex flex-col overflow-hidden bg-navy-dark">
         {/* Talent banner background — photo collage of elite sport leaders */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
@@ -94,13 +94,13 @@ export default function HomePage() {
         {/* Grain texture overlay */}
         <div className="grain-overlay" />
         {/* Gold radial glow behind headline */}
-        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[400px] lg:w-[700px] lg:h-[500px] gold-glow pointer-events-none" />
+        <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[400px] lg:w-[700px] lg:h-[500px] gold-glow pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 md:pt-36 lg:pt-44 pb-20">
+        <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-24 md:pt-36 lg:pt-44 pb-8 md:pb-20 flex-1 flex flex-col justify-center">
           <div className="max-w-5xl">
             {/* Staggered entrance with blur-to-clear */}
             <motion.h1
-              className="font-display font-black text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[110px] leading-[0.9] tracking-tight"
+              className="font-display font-black text-white text-[2rem] sm:text-4xl md:text-5xl lg:text-7xl xl:text-[110px] leading-[1] sm:leading-[0.9] tracking-tight"
               initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -111,7 +111,7 @@ export default function HomePage() {
             </motion.h1>
 
             <motion.p
-              className="mt-8 text-lg md:text-xl text-ice-blue/80 max-w-xl font-body"
+              className="mt-5 md:mt-8 text-base md:text-xl text-ice-blue/80 max-w-xl font-body"
               initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
@@ -121,21 +121,21 @@ export default function HomePage() {
             </motion.p>
 
             <motion.div
-              className="mt-10 flex flex-col sm:flex-row gap-4"
+              className="mt-6 md:mt-10 flex flex-col sm:flex-row gap-3 md:gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <CTAButton href="/sample-lesson" variant="premium" size="xl">
+              <CTAButton href="/sample-lesson" variant="premium" size="lg">
                 Watch a Sample Lesson
               </CTAButton>
-              <CTAButton href="/contact" variant="secondary" size="lg">
+              <CTAButton href="/contact" variant="primary" size="lg">
                 Book a Demo
               </CTAButton>
             </motion.div>
 
             <motion.p
-              className="mt-12 text-xs uppercase tracking-[0.2em] text-white/40 font-mono"
+              className="mt-6 md:mt-12 text-[10px] md:text-xs uppercase tracking-[0.15em] md:tracking-[0.2em] text-white/40 font-mono"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.9 }}
@@ -146,18 +146,18 @@ export default function HomePage() {
         </div>
 
         {/* Stats bar integrated at bottom of hero */}
-        <div className="relative z-10 mt-auto bg-navy-dark/80 backdrop-blur-xl border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="relative z-10 bg-navy-dark/80 backdrop-blur-xl border-t border-white/10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 md:py-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               <StatCounter value={50} suffix="+" label="Lessons" />
               <StatCounter value={5} label="Topic Areas" />
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-mono font-bold text-gold">3&ndash;5</div>
-                <div className="text-xs uppercase tracking-[0.2em] text-white/60 font-mono mt-2">Min Per Lesson</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-mono font-bold text-gold">3&ndash;5</div>
+                <div className="text-[10px] md:text-xs uppercase tracking-[0.15em] md:tracking-[0.2em] text-white/60 font-mono mt-1 md:mt-2">Min Per Lesson</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-mono font-bold text-gold">100%</div>
-                <div className="text-xs uppercase tracking-[0.2em] text-white/60 font-mono mt-2">First-Person</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-mono font-bold text-gold">100%</div>
+                <div className="text-[10px] md:text-xs uppercase tracking-[0.15em] md:tracking-[0.2em] text-white/60 font-mono mt-1 md:mt-2">First-Person</div>
               </div>
             </div>
           </div>
