@@ -128,14 +128,14 @@ export function Navbar() {
             </button>
           </div>
 
-          <div className="flex flex-col items-center justify-center gap-8 px-6 pt-12">
+          <div className="flex flex-col items-center justify-center gap-6 px-6 pt-12">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
                 className={cn(
-                  'text-2xl font-medium text-gray-900 transition-colors hover:text-gold',
+                  'text-xl font-medium text-gray-900 transition-colors hover:text-gold',
                   pathname === link.href && 'text-gold'
                 )}
               >

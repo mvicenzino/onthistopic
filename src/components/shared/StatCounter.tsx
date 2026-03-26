@@ -49,7 +49,7 @@ export function StatCounter({ value, suffix = '', prefix = '', label }: StatCoun
     >
       <motion.div
         animate={controls}
-        className="font-mono text-5xl font-bold text-gold md:text-6xl lg:text-7xl"
+        className="font-mono text-3xl sm:text-4xl font-bold text-gold md:text-5xl lg:text-6xl"
       >
         {prefix}{displayValue}{suffix}
       </motion.div>

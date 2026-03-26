@@ -94,13 +94,13 @@ export default function HomePage() {
         {/* Grain texture overlay */}
         <div className="grain-overlay" />
         {/* Gold radial glow behind headline */}
-        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[400px] md:w-[700px] md:h-[500px] gold-glow pointer-events-none" />
+        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[400px] lg:w-[700px] lg:h-[500px] gold-glow pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 md:pt-44 pb-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 md:pt-36 lg:pt-44 pb-20">
           <div className="max-w-5xl">
             {/* Staggered entrance with blur-to-clear */}
             <motion.h1
-              className="font-display font-black text-white text-5xl md:text-7xl lg:text-[110px] xl:text-[120px] leading-[0.9] tracking-tight"
+              className="font-display font-black text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[110px] leading-[0.9] tracking-tight"
               initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -152,11 +152,11 @@ export default function HomePage() {
               <StatCounter value={50} suffix="+" label="Lessons" />
               <StatCounter value={5} label="Topic Areas" />
               <div className="text-center">
-                <div className="text-5xl md:text-6xl lg:text-7xl font-mono font-bold text-gold">3&ndash;5</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-mono font-bold text-gold">3&ndash;5</div>
                 <div className="text-xs uppercase tracking-[0.2em] text-white/60 font-mono mt-2">Min Per Lesson</div>
               </div>
               <div className="text-center">
-                <div className="text-5xl md:text-6xl lg:text-7xl font-mono font-bold text-gold">100%</div>
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-mono font-bold text-gold">100%</div>
                 <div className="text-xs uppercase tracking-[0.2em] text-white/60 font-mono mt-2">First-Person</div>
               </div>
             </div>
@@ -168,7 +168,7 @@ export default function HomePage() {
       <div className="bg-cream border-y border-gold/20 py-5 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(2)].map((_, i) => (
-            <div key={i} className="flex items-center gap-8 px-4 text-sm font-mono uppercase tracking-[0.3em] text-navy/40">
+            <div key={i} className="flex items-center gap-4 md:gap-8 px-4 text-sm font-mono uppercase tracking-[0.3em] text-navy/40">
               <span>Healthcare</span><span className="text-navy/20">&middot;</span>
               <span>Technology</span><span className="text-navy/20">&middot;</span>
               <span>Financial Services</span><span className="text-navy/20">&middot;</span>
@@ -274,7 +274,7 @@ export default function HomePage() {
           </p>
           <div className="w-24 h-1.5 bg-gold mt-4 rounded-full" />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
             {topics.slice(0, 3).map((topic, i) => (
               <div key={topic.slug}>
                 <TopicCard {...topic} index={i} />

@@ -28,7 +28,7 @@ const variantStyles: Record<Variant, (dark: boolean) => string> = {
 }
 
 const sizeStyles: Record<Size, string> = {
-  sm: 'px-4 py-2 text-sm',
+  sm: 'px-4 py-3 text-sm',
   md: 'px-6 py-3 text-base',
   lg: 'px-8 py-4 text-lg',
   xl: 'px-10 py-5 text-xl',

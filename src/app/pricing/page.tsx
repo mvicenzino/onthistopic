@@ -93,7 +93,7 @@ export default function PricingPage() {
     <>
       {/* ───────────────────────── Hero ───────────────────────── */}
       <section className="relative bg-cream overflow-hidden pt-36 md:pt-44 pb-16 md:pb-20">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] gold-glow pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] gold-glow pointer-events-none" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="font-mono text-sm uppercase tracking-[0.2em] text-gold">Pricing</div>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-gray-900 font-black mt-3">
@@ -108,13 +108,13 @@ export default function PricingPage() {
       {/* ───────────────────────── Pricing Tiers ───────────────────────── */}
       <SectionWrapper className="bg-white py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {tiers.map((tier) => (
               <div
                 key={tier.name}
                 className={`relative rounded-2xl border p-8 ${
                   tier.popular
-                    ? 'border-2 border-gold bg-navy md:scale-105 md:z-10 shadow-[0_0_30px_rgba(201,168,76,0.15)]'
+                    ? 'border-2 border-gold bg-navy lg:scale-105 lg:z-10 shadow-[0_0_30px_rgba(201,168,76,0.15)]'
                     : 'border-gray-200 bg-white'
                 }`}
               >

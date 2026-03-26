@@ -15,7 +15,7 @@ export default function AboutPage() {
     <main>
       {/* Hero */}
       <section className="relative bg-cream overflow-hidden pt-36 md:pt-44 pb-16 md:pb-20">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] gold-glow pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] gold-glow pointer-events-none" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="font-mono text-sm uppercase tracking-[0.2em] text-gold">About</div>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-gray-900 font-black mt-3">
@@ -30,7 +30,7 @@ export default function AboutPage() {
 
       {/* Founder Section */}
       <SectionWrapper className="bg-white py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-6 space-y-0">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-0">
           {/* Karen DePodesta — image left, text right */}
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
             <div className="lg:col-span-2">
@@ -127,7 +127,7 @@ export default function AboutPage() {
 
       {/* Our Story */}
       <SectionWrapper className="bg-cream py-20 md:py-28">
-        <div className="mx-auto max-w-4xl px-6">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <blockquote className="border-l-4 border-gold pl-8">
             <p className="font-display text-2xl italic text-gray-900">
               &ldquo;The greatest lessons in leadership aren&rsquo;t found in
@@ -164,7 +164,7 @@ export default function AboutPage() {
 
       {/* By the Numbers */}
       <SectionWrapper className="bg-navy py-16 md:py-20">
-        <div className="mx-auto max-w-5xl px-6">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <StatCounter value={50} suffix="+" label="Lessons Produced" />
             <StatCounter value={5} label="Topic Areas" />
@@ -190,7 +190,7 @@ export default function AboutPage() {
 
       {/* Doing Good */}
       <SectionWrapper className="bg-white py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="font-display text-3xl text-gray-900">
@@ -231,7 +231,7 @@ export default function AboutPage() {
 
       {/* CTA */}
       <SectionWrapper className="bg-cream py-20 md:py-28">
-        <div className="mx-auto max-w-3xl px-6 text-center">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <CTAButton href="/blog" variant="secondary">
               Read the Blog

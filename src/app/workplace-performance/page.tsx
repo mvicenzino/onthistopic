@@ -72,7 +72,7 @@ export default function WorkplacePerformancePage() {
   return (
     <>
       <section className="relative bg-cream overflow-hidden pt-36 md:pt-44 pb-16 md:pb-20">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] gold-glow pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] gold-glow pointer-events-none" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[250px_1fr]">
             {/* ─── Table of Contents ─── */}

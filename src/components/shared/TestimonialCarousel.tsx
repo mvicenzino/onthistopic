@@ -39,7 +39,7 @@ export function TestimonialCarousel() {
   return (
     <div className="relative max-w-4xl mx-auto">
       {/* Massive decorative quote mark */}
-      <div className="absolute -top-8 -left-4 text-[120px] md:text-[180px] font-display text-gold/30 leading-none select-none pointer-events-none" aria-hidden>
+      <div className="absolute -top-8 -left-4 text-6xl sm:text-7xl md:text-8xl lg:text-[120px] font-display text-gold/30 leading-none select-none pointer-events-none" aria-hidden>
         &ldquo;
       </div>
 
