@@ -97,21 +97,19 @@ export default function HowItWorksPage() {
   return (
     <>
       {/* ───────────────────────── Hero ───────────────────────── */}
-      <SectionWrapper className="bg-cream py-20 md:py-28 relative overflow-hidden">
+      <section className="relative bg-cream overflow-hidden pt-36 md:pt-44 pb-16 md:pb-20">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] gold-glow pointer-events-none" />
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative">
-          <p className="text-sm font-mono uppercase tracking-[0.2em] text-gold">
-            How It Works
-          </p>
-          <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-gray-900">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="font-mono text-sm uppercase tracking-[0.2em] text-gold">How It Works</div>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-gray-900 font-black mt-3">
             A Simple, Flexible Learning Experience
           </h1>
-          <p className="mt-6 mx-auto max-w-2xl text-lg text-gray-600">
+          <p className="mt-6 text-gray-600 text-lg max-w-2xl">
             Designed to fit into real workdays — for individuals, teams, and
             organizations.
           </p>
         </div>
-      </SectionWrapper>
+      </section>
 
       {/* ───────────────────────── 4-Step Process ───────────────────────── */}
       <SectionWrapper className="bg-white py-20 md:py-28">

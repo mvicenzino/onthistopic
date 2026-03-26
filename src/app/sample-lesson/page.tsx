@@ -18,9 +18,9 @@ export default function SampleLessonPage() {
   return (
     <>
       {/* ───────────────────────── Lesson Header ───────────────────────── */}
-      <SectionWrapper className="bg-cream py-20 md:py-28 relative overflow-hidden">
+      <section className="relative bg-cream overflow-hidden pt-36 md:pt-44 pb-16 md:pb-20">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] gold-glow pointer-events-none" />
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 relative">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <span className="inline-block rounded-full bg-gold/10 px-3 py-1 font-mono text-xs uppercase tracking-widest text-gold">
               Sample Lesson
@@ -83,7 +83,7 @@ export default function SampleLessonPage() {
             </span>
           </a>
         </div>
-      </SectionWrapper>
+      </section>
 
       {/* ───────────────────────── Most Viewed Lessons ───────────────────────── */}
       <SectionWrapper className="bg-white py-20 md:py-28">

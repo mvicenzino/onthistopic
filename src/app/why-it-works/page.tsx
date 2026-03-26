@@ -84,22 +84,18 @@ export default function WhyItWorksPage() {
   return (
     <>
       {/* ───────────────────────── Hero ───────────────────────── */}
-      <SectionWrapper className="bg-cream py-20 md:py-28 relative overflow-hidden">
+      <section className="relative bg-cream overflow-hidden pt-36 md:pt-44 pb-16 md:pb-20">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] gold-glow pointer-events-none" />
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative">
-          <p className="text-sm font-mono uppercase tracking-[0.2em] text-gold">
-            Why It Works
-          </p>
-          <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-gray-900">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="font-mono text-sm uppercase tracking-[0.2em] text-gold">Why It Works</div>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-gray-900 font-black mt-3">
             The Science and Sport Behind Every Lesson
           </h1>
-          <p className="mt-6 mx-auto max-w-2xl text-lg text-gray-600">
-            We combine proven learning science with first-person stories from
-            elite sport — creating lessons that stick, scale, and translate
-            directly to the workplace.
+          <p className="mt-6 text-gray-600 text-lg max-w-2xl">
+            Combining learning science with firsthand insight from elite sport to drive real behavior change.
           </p>
         </div>
-      </SectionWrapper>
+      </section>
 
       {/* ───────────────────────── 4 Pillars — Alternating Layout ───────────────────────── */}
       <SectionWrapper className="bg-white py-20 md:py-28">
