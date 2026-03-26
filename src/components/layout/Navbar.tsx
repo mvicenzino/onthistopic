@@ -21,6 +21,10 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const pathname = usePathname()
 
+  // Only the homepage has a dark hero — all other pages have cream backgrounds
+  const hasDarkHero = pathname === '/'
+  const showDarkNav = hasDarkHero && !scrolled
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
@@ -58,9 +62,9 @@ export function Navbar() {
       <nav
         className={cn(
           'fixed top-[2px] w-full z-50 transition-all duration-300',
-          scrolled
-            ? 'backdrop-blur-xl bg-cream/95 border-b border-black/5 shadow-sm text-gray-900'
-            : 'backdrop-blur-xl bg-transparent border-b border-white/5 text-white'
+          showDarkNav
+            ? 'backdrop-blur-xl bg-transparent border-b border-white/5 text-white'
+            : 'backdrop-blur-xl bg-cream/95 border-b border-black/5 shadow-sm text-gray-900'
         )}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -74,7 +78,7 @@ export function Navbar() {
                   href={link.href}
                   className={cn(
                     'text-sm font-medium transition-colors',
-                    scrolled ? 'text-gray-700 hover:text-navy' : 'text-white hover:text-gold',
+                    showDarkNav ? 'text-white hover:text-gold' : 'text-gray-700 hover:text-navy',
                     pathname === link.href && 'border-b-2 border-gold pb-0.5'
                   )}
                 >
@@ -88,9 +92,9 @@ export function Navbar() {
                 href="/sample-lesson"
                 className={cn(
                   'inline-flex items-center font-semibold rounded-full px-5 py-2.5 text-sm transition-all duration-300',
-                  scrolled
-                    ? 'bg-navy text-white hover:bg-navy-light hover:shadow-[0_0_20px_rgba(27,46,75,0.3)]'
-                    : 'bg-white text-navy hover:bg-gray-100'
+                  showDarkNav
+                    ? 'bg-white text-navy hover:bg-gray-100'
+                    : 'bg-navy text-white hover:bg-navy-light hover:shadow-[0_0_20px_rgba(27,46,75,0.3)]'
                 )}
               >
                 Watch a Sample Lesson
