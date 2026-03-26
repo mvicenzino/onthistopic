@@ -77,9 +77,9 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    'text-sm font-medium transition-colors',
+                    'text-sm font-medium transition-colors border-b-2 pb-0.5',
                     showDarkNav ? 'text-white hover:text-gold' : 'text-gray-700 hover:text-navy',
-                    pathname === link.href && 'border-b-2 border-gold pb-0.5'
+                    pathname === link.href ? 'border-gold' : 'border-transparent'
                   )}
                 >
                   {link.label}
