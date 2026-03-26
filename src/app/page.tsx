@@ -1,5 +1,6 @@
 'use client'
 
+import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import {
   User,
@@ -10,6 +11,8 @@ import {
   Clock,
   Trophy,
   Rocket,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react'
 import { CTAButton } from '@/components/shared/CTAButton'
 import { StatCounter } from '@/components/shared/StatCounter'
@@ -50,6 +53,17 @@ const buildItems = [
 ]
 
 export default function HomePage() {
+  const scrollRef = useRef<HTMLDivElement>(null)
+
+  const scrollCards = (direction: 'left' | 'right') => {
+    if (!scrollRef.current) return
+    const cardWidth = scrollRef.current.firstElementChild?.clientWidth ?? 400
+    scrollRef.current.scrollBy({
+      left: direction === 'right' ? cardWidth + 24 : -(cardWidth + 24),
+      behavior: 'smooth',
+    })
+  }
+
   return (
     <>
       {/* JSON-LD Organization Schema */}
@@ -171,7 +185,28 @@ export default function HomePage() {
           <div className="w-24 h-1.5 bg-gold mt-4 rounded-full" />
         </div>
 
-        <div className="mt-12 flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 px-4 sm:px-6 lg:px-8 scrollbar-hide">
+        {/* Navigation arrows — desktop */}
+        <div className="hidden md:flex gap-2 mt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <button
+            onClick={() => scrollCards('left')}
+            className="w-11 h-11 rounded-full border-2 border-navy/15 text-navy/60 flex items-center justify-center hover:bg-navy hover:text-white hover:border-navy transition-all duration-200"
+            aria-label="Previous card"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={() => scrollCards('right')}
+            className="w-11 h-11 rounded-full border-2 border-navy/15 text-navy/60 flex items-center justify-center hover:bg-navy hover:text-white hover:border-navy transition-all duration-200"
+            aria-label="Next card"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+
+        <div
+          ref={scrollRef}
+          className="mt-6 md:mt-8 flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 px-4 sm:px-6 lg:px-8 scrollbar-hide scroll-smooth"
+        >
           {useCases.map((card, i) => (
             <motion.div
               key={card.title}
@@ -236,14 +271,14 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
             {topics.slice(0, 3).map((topic, i) => (
-              <div key={topic.slug} className={i === 1 ? 'md:mt-12' : i === 2 ? 'md:mt-6' : ''}>
+              <div key={topic.slug}>
                 <TopicCard {...topic} index={i} />
               </div>
             ))}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 max-w-3xl mx-auto">
             {topics.slice(3).map((topic, i) => (
-              <div key={topic.slug} className={i === 1 ? 'md:mt-8' : ''}>
+              <div key={topic.slug}>
                 <TopicCard {...topic} index={i + 3} />
               </div>
             ))}
