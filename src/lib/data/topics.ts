@@ -1,0 +1,42 @@
+export const topics = [
+  {
+    slug: 'leadership-strategy',
+    name: 'Leadership & Strategy',
+    icon: 'Crown',
+    description: 'Lessons on leading with clarity, making high-stakes decisions, and sustaining success over time.',
+    subTopics: ['Leadership', 'Decision-Making', 'Crisis Management', 'Sustaining Success'],
+    lessonCount: 12,
+  },
+  {
+    slug: 'people-teams',
+    name: 'People & Teams',
+    icon: 'Users',
+    description: 'Lessons on building trust, communicating with impact, and creating team cultures that perform.',
+    subTopics: ['Teamwork', 'Culture', 'Communication', 'Trust & Relationships'],
+    lessonCount: 10,
+  },
+  {
+    slug: 'performance-pressure',
+    name: 'Performance & Pressure',
+    icon: 'Target',
+    description: 'Lessons on performing under pressure, embracing competition, and leading through change.',
+    subTopics: ['Pressure', 'Competition', 'Resilience', 'Change Management'],
+    lessonCount: 10,
+  },
+  {
+    slug: 'personal-performance',
+    name: 'Personal Performance',
+    icon: 'TrendingUp',
+    description: 'Lessons on managing your time, sustaining energy, and building a career with intention.',
+    subTopics: ['Time Management', 'Work-Life Balance', 'Innovation', 'Career Path'],
+    lessonCount: 9,
+  },
+  {
+    slug: 'talent-impact',
+    name: 'Talent & Impact',
+    icon: 'Star',
+    description: 'Lessons on developing talent, negotiating effectively, and creating lasting impact.',
+    subTopics: ['Talent Development', 'Negotiation', 'Mindfulness', 'Supporting Others'],
+    lessonCount: 9,
+  },
+]
