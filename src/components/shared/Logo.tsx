@@ -35,7 +35,31 @@ export function Logo({ size = 32, className }: LogoProps) {
         d="M21 22L26 28L19 24"
         fill="currentColor"
       />
-      {/* Gold inner glow — small concentric circle */}
+      {/* Gold inner glow — small concentric circle with pulsating glow */}
+      <circle
+        cx="15"
+        cy="14"
+        r="6"
+        fill="rgba(201,168,76,0.08)"
+        opacity="0.6"
+      >
+        <animate
+          attributeName="r"
+          values="5;7;5"
+          dur="3s"
+          repeatCount="indefinite"
+          calcMode="spline"
+          keySplines="0.4 0 0.6 1;0.4 0 0.6 1"
+        />
+        <animate
+          attributeName="opacity"
+          values="0.4;0.8;0.4"
+          dur="3s"
+          repeatCount="indefinite"
+          calcMode="spline"
+          keySplines="0.4 0 0.6 1;0.4 0 0.6 1"
+        />
+      </circle>
       <circle
         cx="15"
         cy="14"
