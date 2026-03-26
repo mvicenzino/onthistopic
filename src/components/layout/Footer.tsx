@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { EmailCapture } from '@/components/shared/EmailCapture'
+import { LogoWordmark } from '@/components/shared/LogoWordmark'
 
 function LinkedinIcon({ className }: { className?: string }) {
   return (
@@ -38,7 +39,7 @@ const resourceLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-navy-dark text-white">
+    <footer className="bg-dark-base border-t border-white/5 text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="border-b border-white/10 py-12">
           <div className="mx-auto max-w-xl text-center">
@@ -53,9 +54,7 @@ export function Footer() {
 
         <div className="grid grid-cols-1 gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link href="/" className="font-display text-xl font-bold tracking-tight">
-              On This Topic
-            </Link>
+            <LogoWordmark size="sm" />
             <p className="mt-3 text-sm text-white/60">
               Leadership development that sticks.
             </p>

@@ -22,7 +22,7 @@ export function TopicCard({ slug, name, icon, subTopics, lessonCount }: TopicCar
     >
       <Link
         href={`/topics/${slug}`}
-        className="group block overflow-hidden rounded-xl bg-navy"
+        className="group block overflow-hidden rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-gold/30 hover:shadow-[0_8px_40px_rgba(201,168,76,0.08)] transition-all"
       >
         <div className="h-1 bg-gold" />
         <div className="p-6">

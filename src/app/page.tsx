@@ -54,7 +54,7 @@ export default function HomePage() {
       />
 
       {/* ───────────────────────── Hero ───────────────────────── */}
-      <section className="relative flex min-h-screen items-center justify-center bg-navy-dark overflow-hidden">
+      <section className="relative flex min-h-screen items-center justify-center bg-dark-base overflow-hidden">
         {/* Grain texture overlay */}
         <div
           className="pointer-events-none absolute inset-0 opacity-20"
@@ -64,7 +64,7 @@ export default function HomePage() {
           }}
         />
         {/* Subtle diagonal gradient */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-navy-dark via-navy-dark to-navy/40" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-dark-base via-dark-base to-dark-card/40" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -120,7 +120,7 @@ export default function HomePage() {
       </section>
 
       {/* ───────────────────────── Stats Bar ───────────────────────── */}
-      <SectionWrapper className="bg-navy-light py-16">
+      <SectionWrapper className="bg-dark-elevated py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             <StatCounter value={50} suffix="+" label="Lessons" />
@@ -161,9 +161,9 @@ export default function HomePage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Trust Logo Strip ───────────────────────── */}
-      <SectionWrapper className="bg-white py-12">
+      <SectionWrapper className="bg-dark-surface py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <p className="mb-8 text-sm uppercase tracking-wider text-gray-500">
+          <p className="mb-8 text-sm uppercase tracking-wider text-white/40">
             Organizations building stronger teams with On This Topic
           </p>
           <div className="grid grid-cols-3 gap-4 md:grid-cols-6">
@@ -177,9 +177,9 @@ export default function HomePage() {
             ].map((label) => (
               <div
                 key={label}
-                className="flex h-[60px] w-full items-center justify-center rounded-lg bg-gray-100"
+                className="flex h-[60px] w-full items-center justify-center rounded-lg bg-white/5 border border-white/10"
               >
-                <span className="text-xs font-mono text-gray-400">{label}</span>
+                <span className="text-xs font-mono text-white/30">{label}</span>
               </div>
             ))}
           </div>
@@ -187,9 +187,9 @@ export default function HomePage() {
       </SectionWrapper>
 
       {/* ───────────────────────── How People Use It ───────────────────────── */}
-      <SectionWrapper className="bg-off-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-base py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl md:text-4xl">
+          <h2 className="text-center font-display text-3xl md:text-4xl text-white">
             How People Use It
           </h2>
 
@@ -216,11 +216,11 @@ export default function HomePage() {
             ].map(({ Icon, title, description }) => (
               <div
                 key={title}
-                className="rounded-xl bg-white p-8 shadow-sm"
+                className="rounded-xl bg-white/5 backdrop-blur-md border border-white/10 p-8"
               >
                 <Icon className="h-8 w-8 text-gold" />
-                <h3 className="mt-4 font-display text-xl mb-2">{title}</h3>
-                <p className="text-gray-700">{description}</p>
+                <h3 className="mt-4 font-display text-xl mb-2 text-white">{title}</h3>
+                <p className="text-white/70">{description}</p>
               </div>
             ))}
           </div>
@@ -228,12 +228,12 @@ export default function HomePage() {
       </SectionWrapper>
 
       {/* ───────────────────────── What It Builds ───────────────────────── */}
-      <SectionWrapper className="bg-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
             {/* Left: pull quote */}
             <div className="flex items-center">
-              <p className="font-display text-3xl leading-tight text-navy md:text-4xl">
+              <p className="font-display text-3xl leading-tight text-white md:text-4xl">
                 &ldquo;We don&apos;t teach theory. We share what elite performers
                 have learned under real pressure — and translate it into lessons your
                 teams can use tomorrow.&rdquo;
@@ -253,7 +253,7 @@ export default function HomePage() {
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <Check className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
-                    <span className="text-gray-700">{item}</span>
+                    <span className="text-white/70">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -263,9 +263,9 @@ export default function HomePage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Topic Preview ───────────────────────── */}
-      <SectionWrapper className="bg-off-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-base py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl md:text-4xl">
+          <h2 className="text-center font-display text-3xl md:text-4xl text-white">
             Explore by Topic
           </h2>
 
@@ -283,9 +283,9 @@ export default function HomePage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Why It Works ───────────────────────── */}
-      <SectionWrapper className="bg-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl md:text-4xl">
+          <h2 className="text-center font-display text-3xl md:text-4xl text-white">
             Why On This Topic Works
           </h2>
 
@@ -322,12 +322,12 @@ export default function HomePage() {
             ].map(({ Icon, title, stat, description }) => (
               <div
                 key={title}
-                className="rounded-xl bg-white border border-gray-200 p-6"
+                className="rounded-xl bg-white/5 backdrop-blur-md border border-white/10 p-6"
               >
                 <Icon className="h-8 w-8 text-gold" />
-                <h3 className="mt-4 font-display text-lg">{title}</h3>
+                <h3 className="mt-4 font-display text-lg text-white">{title}</h3>
                 <p className="mt-1 font-mono text-sm text-gold">{stat}</p>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-white/70 leading-relaxed">
                   {description}
                 </p>
               </div>
@@ -337,9 +337,9 @@ export default function HomePage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Testimonials ───────────────────────── */}
-      <SectionWrapper className="bg-off-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-base py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl md:text-4xl">
+          <h2 className="text-center font-display text-3xl md:text-4xl text-white">
             What L&amp;D Leaders Say
           </h2>
 
@@ -367,7 +367,7 @@ export default function HomePage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Email Capture ───────────────────────── */}
-      <SectionWrapper className="bg-navy py-20 md:py-28">
+      <SectionWrapper className="bg-dark-card py-20 md:py-28">
         <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-3xl text-white">
             Get 3 Free Sample Lessons

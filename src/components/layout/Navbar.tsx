@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { LogoWordmark } from '@/components/shared/LogoWordmark'
 
 const navLinks = [
   { href: '/how-it-works', label: 'How It Works' },
@@ -49,18 +50,13 @@ export function Navbar() {
         className={cn(
           'fixed top-0 w-full z-50 transition-all duration-300',
           scrolled
-            ? 'bg-white text-navy shadow-md'
-            : 'bg-transparent text-white'
+            ? 'backdrop-blur-xl bg-dark-base/95 border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.3)] text-white'
+            : 'backdrop-blur-xl bg-dark-base/80 border-b border-white/5 text-white'
         )}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between md:h-20">
-            <Link
-              href="/"
-              className="font-display text-xl font-bold tracking-tight md:text-2xl"
-            >
-              On This Topic
-            </Link>
+            <LogoWordmark size="md" />
 
             <div className="hidden items-center gap-8 lg:flex">
               {navLinks.map((link) => (
@@ -80,7 +76,7 @@ export function Navbar() {
             <div className="hidden lg:block">
               <Link
                 href="/sample-lesson"
-                className="inline-flex items-center rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-navy transition-colors hover:bg-gold-light"
+                className="inline-flex items-center rounded-full backdrop-blur-xl bg-gold/20 border border-gold/30 text-gold px-5 py-2.5 text-sm font-semibold transition-all duration-300 hover:bg-gold/30 hover:shadow-[0_0_15px_rgba(201,168,76,0.25)]"
               >
                 Watch a Sample Lesson
                 <span className="ml-1.5" aria-hidden="true">&rarr;</span>
@@ -100,15 +96,9 @@ export function Navbar() {
       </nav>
 
       {mobileOpen && (
-        <div className="fixed inset-0 z-50 bg-navy">
+        <div className="fixed inset-0 z-50 bg-dark-base/98 backdrop-blur-xl">
           <div className="flex h-16 items-center justify-between px-4 sm:px-6">
-            <Link
-              href="/"
-              className="font-display text-xl font-bold tracking-tight text-white"
-              onClick={() => setMobileOpen(false)}
-            >
-              On This Topic
-            </Link>
+            <LogoWordmark size="md" className="text-white" />
             <button
               type="button"
               onClick={() => setMobileOpen(false)}
@@ -137,7 +127,7 @@ export function Navbar() {
             <Link
               href="/sample-lesson"
               onClick={() => setMobileOpen(false)}
-              className="mt-4 inline-flex items-center rounded-full bg-gold px-8 py-3 text-lg font-semibold text-navy transition-colors hover:bg-gold-light"
+              className="mt-4 inline-flex items-center rounded-full backdrop-blur-xl bg-gold/20 border border-gold/30 text-gold px-8 py-3 text-lg font-semibold transition-all duration-300 hover:bg-gold/30 hover:shadow-[0_0_15px_rgba(201,168,76,0.25)]"
             >
               Watch a Sample Lesson
               <span className="ml-2" aria-hidden="true">&rarr;</span>

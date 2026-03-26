@@ -18,13 +18,11 @@ interface CTAButtonProps {
 
 const variantStyles: Record<Variant, (dark: boolean) => string> = {
   primary: () =>
-    'bg-gold text-navy font-semibold hover:bg-gold-light',
-  secondary: (dark) =>
-    dark
-      ? 'border border-white text-white hover:bg-white/10'
-      : 'border border-navy text-navy hover:bg-navy/10',
+    'backdrop-blur-xl bg-gold/20 border border-gold/30 text-gold font-semibold shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-gold/30 hover:border-gold/50 hover:shadow-[0_0_20px_rgba(201,168,76,0.3)]',
+  secondary: () =>
+    'backdrop-blur-xl bg-white/5 border border-white/15 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] hover:bg-white/10 hover:border-white/25',
   ghost: () =>
-    'text-current hover:underline underline-offset-4',
+    'text-gold hover:text-gold-light hover:underline underline-offset-4',
 }
 
 const sizeStyles: Record<Size, string> = {
@@ -45,7 +43,7 @@ export function CTAButton({
   disabled = false,
 }: CTAButtonProps) {
   const classes = cn(
-    'inline-flex items-center justify-center rounded-full font-medium transition-colors',
+    'inline-flex items-center justify-center rounded-full font-medium transition-all duration-300',
     variantStyles[variant](dark),
     variant !== 'ghost' && sizeStyles[size],
     variant === 'ghost' && 'px-0 py-0',

@@ -18,20 +18,20 @@ export default function SampleLessonPage() {
   return (
     <>
       {/* ───────────────────────── Lesson Header ───────────────────────── */}
-      <SectionWrapper className="bg-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-base py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <span className="inline-block rounded-full bg-gold/10 px-3 py-1 font-mono text-xs uppercase tracking-widest text-gold">
               Sample Lesson
             </span>
-            <h1 className="mt-4 font-display text-4xl font-bold text-navy md:text-5xl">
+            <h1 className="mt-4 font-display text-4xl font-bold text-white md:text-5xl">
               Learning From Failure
             </h1>
-            <p className="mt-3 text-gray-500">
+            <p className="mt-3 text-white/50">
               Mental Performance Coach — NFL &amp; MLB
             </p>
             <div className="mt-4 flex items-center justify-center gap-3">
-              <span className="rounded-full bg-gray-100 px-3 py-1 font-mono text-xs text-gray-700">
+              <span className="rounded-full bg-white/5 px-3 py-1 font-mono text-xs text-white/60">
                 4 min
               </span>
               <span className="rounded-full bg-gold/10 px-3 py-1 text-xs font-medium text-gold">
@@ -43,7 +43,7 @@ export default function SampleLessonPage() {
           {/* ───────────────────────── Video Player ───────────────────────── */}
           <div className="mt-10">
             <div
-              className="relative w-full overflow-hidden rounded-xl bg-navy-dark"
+              className="relative w-full overflow-hidden rounded-xl bg-dark-base"
               style={{ aspectRatio: '16/9' }}
             >
               <iframe
@@ -58,14 +58,14 @@ export default function SampleLessonPage() {
 
           {/* ───────────────────────── Key Takeaways ───────────────────────── */}
           <div className="mt-10 rounded-xl border-2 border-gold p-6 md:p-8">
-            <h2 className="font-display text-xl font-bold text-navy">
+            <h2 className="font-display text-xl font-bold text-white">
               Key Takeaways
             </h2>
             <ul className="mt-4 space-y-3">
               {keyTakeaways.map((point) => (
                 <li key={point} className="flex items-start gap-3">
                   <Check className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
-                  <span className="text-gray-700">{point}</span>
+                  <span className="text-white/80">{point}</span>
                 </li>
               ))}
             </ul>
@@ -74,10 +74,10 @@ export default function SampleLessonPage() {
           {/* ───────────────────────── Learning Supplement ───────────────────────── */}
           <a
             href="#"
-            className="mt-6 flex items-center gap-3 rounded-xl border border-gray-200 p-5 transition-colors hover:border-gold hover:bg-gold/5"
+            className="mt-6 flex items-center gap-3 rounded-xl border border-white/10 p-5 transition-colors hover:border-gold/30 hover:bg-gold/10"
           >
             <FileText className="h-6 w-6 shrink-0 text-gold" />
-            <span className="font-medium text-navy">
+            <span className="font-medium text-white">
               Download Learning Supplement (PDF) &rarr;
             </span>
           </a>
@@ -85,7 +85,7 @@ export default function SampleLessonPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Most Viewed Lessons ───────────────────────── */}
-      <SectionWrapper className="bg-off-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-center font-display text-3xl md:text-4xl">
             Most Viewed Lessons
@@ -105,7 +105,7 @@ export default function SampleLessonPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Post-Lesson CTA ───────────────────────── */}
-      <SectionWrapper className="bg-navy py-20 md:py-28">
+      <SectionWrapper className="bg-dark-card py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl text-white">
             Liked what you saw?
@@ -126,9 +126,9 @@ export default function SampleLessonPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Contact Form ───────────────────────── */}
-      <SectionWrapper className="bg-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-base py-20 md:py-28">
         <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
-          <h2 className="mb-8 text-center font-display text-2xl text-navy">
+          <h2 className="mb-8 text-center font-display text-2xl text-white">
             LET&apos;S TALK DETAILS
           </h2>
           <ContactForm variant="compact" />

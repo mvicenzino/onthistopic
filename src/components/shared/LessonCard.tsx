@@ -18,10 +18,10 @@ export function LessonCard({ title, duration, topic, speaker }: LessonCardProps)
       whileHover={{ y: -4 }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
     >
-      <div className="overflow-hidden rounded-xl bg-white shadow-sm transition-shadow group-hover:shadow-lg">
+      <div className="overflow-hidden rounded-xl bg-white/5 backdrop-blur-md border border-white/10 transition-all group-hover:border-white/20 group-hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)]">
         <div className="relative">
           <ImagePlaceholder label={title} aspect="16/9" className="rounded-none" />
-          <span className="absolute bottom-2 right-2 rounded bg-navy/80 px-2 py-1 font-mono text-xs text-white">
+          <span className="absolute bottom-2 right-2 rounded bg-black/60 px-2 py-1 font-mono text-xs text-white">
             {duration}
           </span>
         </div>
@@ -29,10 +29,10 @@ export function LessonCard({ title, duration, topic, speaker }: LessonCardProps)
           <span className="text-xs font-semibold uppercase tracking-wider text-gold">
             {topic}
           </span>
-          <h3 className="mt-1 font-body text-lg font-medium text-gray-900 leading-snug">
+          <h3 className="mt-1 font-body text-lg font-medium text-white leading-snug">
             {title}
           </h3>
-          <p className="mt-1 text-sm text-gray-500">{speaker}</p>
+          <p className="mt-1 text-sm text-white/50">{speaker}</p>
         </div>
       </div>
     </motion.div>

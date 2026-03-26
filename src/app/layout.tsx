@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable} ${dmMono.variable}`}>
-      <body className="font-body antialiased">
+      <body className="font-body antialiased bg-dark-base text-white">
         <Navbar />
         <main>{children}</main>
         <Footer />

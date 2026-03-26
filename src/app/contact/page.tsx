@@ -26,30 +26,30 @@ export default function ContactPage() {
   return (
     <>
       {/* ───────────────────────── Hero ───────────────────────── */}
-      <SectionWrapper className="bg-off-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <p className="font-mono text-sm uppercase tracking-widest text-gold">
             Contact
           </p>
-          <h1 className="mt-3 font-display text-4xl font-bold text-navy md:text-5xl">
+          <h1 className="mt-3 font-display text-4xl font-bold text-white md:text-5xl">
             Ready to Elevate Your Team?
           </h1>
         </div>
       </SectionWrapper>
 
       {/* ───────────────────────── Two-Column Layout ───────────────────────── */}
-      <SectionWrapper className="bg-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-base py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
             {/* Left — Contact Info */}
             <div>
-              <div className="rounded-2xl bg-off-white p-8">
+              <div className="rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-8">
                 <ul className="space-y-5">
                   <li className="flex items-center gap-3">
                     <Mail className="h-5 w-5 shrink-0 text-gold" />
                     <a
                       href="mailto:hello@onthistopic.com"
-                      className="text-navy hover:text-gold"
+                      className="text-white hover:text-gold"
                     >
                       hello@onthistopic.com
                     </a>
@@ -60,7 +60,7 @@ export default function ContactPage() {
                       href="https://www.linkedin.com/in/karendepodesta/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-navy hover:text-gold"
+                      className="text-white hover:text-gold"
                     >
                       Karen DePodesta
                     </a>
@@ -71,20 +71,20 @@ export default function ContactPage() {
                       href="https://www.linkedin.com/in/michelletannenbaum/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-navy hover:text-gold"
+                      className="text-white hover:text-gold"
                     >
                       Michelle Tannenbaum
                     </a>
                   </li>
                   <li className="flex items-center gap-3">
                     <Clock className="h-5 w-5 shrink-0 text-gold" />
-                    <span className="text-gray-700">
+                    <span className="text-white/70">
                       We respond within 1 business day.
                     </span>
                   </li>
                   <li className="flex items-center gap-3">
                     <MapPin className="h-5 w-5 shrink-0 text-gold" />
-                    <span className="text-gray-700">
+                    <span className="text-white/70">
                       Based in the United States.
                     </span>
                   </li>

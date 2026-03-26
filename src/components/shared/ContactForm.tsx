@@ -46,7 +46,7 @@ const ldGoalOptions = [
 ]
 
 const inputClasses =
-  'w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition-colors focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold'
+  'w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 transition-colors focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold/20'
 const errorClasses = 'mt-1 text-xs text-red-500'
 
 export function ContactForm({ variant = 'compact' }: ContactFormProps) {
@@ -80,16 +80,16 @@ export function ContactForm({ variant = 'compact' }: ContactFormProps) {
 
   if (submitted) {
     return (
-      <div className="rounded-xl bg-off-white p-8 text-center">
+      <div className="rounded-xl bg-white/5 border border-white/10 p-8 text-center">
         <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gold/20">
           <svg className="h-8 w-8 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="font-display text-2xl font-bold text-navy">
+        <h3 className="font-display text-2xl font-bold text-white">
           Thanks, {submittedName}!
         </h3>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-white/60">
           We&apos;ll be in touch within 1 business day.
         </p>
         <div className="mt-6">

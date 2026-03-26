@@ -97,15 +97,15 @@ export default function HowItWorksPage() {
   return (
     <>
       {/* ───────────────────────── Hero ───────────────────────── */}
-      <SectionWrapper className="bg-off-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-sm font-mono uppercase tracking-[0.2em] text-gold">
             How It Works
           </p>
-          <h1 className="mt-4 font-display text-4xl md:text-5xl text-navy">
+          <h1 className="mt-4 font-display text-4xl md:text-5xl text-white">
             A Simple, Flexible Learning Experience
           </h1>
-          <p className="mt-6 mx-auto max-w-2xl text-lg text-gray-700">
+          <p className="mt-6 mx-auto max-w-2xl text-lg text-white/70">
             Designed to fit into real workdays — for individuals, teams, and
             organizations.
           </p>
@@ -113,7 +113,7 @@ export default function HowItWorksPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── 4-Step Process ───────────────────────── */}
-      <SectionWrapper className="bg-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-base py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Desktop horizontal timeline */}
           <div className="hidden md:block">
@@ -135,10 +135,10 @@ export default function HowItWorksPage() {
             <div className="mt-8 grid grid-cols-4 gap-8">
               {steps.map((step) => (
                 <div key={step.number}>
-                  <h3 className="font-display text-xl text-navy">
+                  <h3 className="font-display text-xl text-white">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                  <p className="mt-2 text-sm text-white/70 leading-relaxed">
                     {step.description}
                   </p>
                   <div className="mt-4">
@@ -165,10 +165,10 @@ export default function HowItWorksPage() {
 
                 {/* Content */}
                 <div className="pb-4">
-                  <h3 className="font-display text-xl text-navy">
+                  <h3 className="font-display text-xl text-white">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                  <p className="mt-2 text-sm text-white/70 leading-relaxed">
                     {step.description}
                   </p>
                   <div className="mt-4">
@@ -182,9 +182,9 @@ export default function HowItWorksPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Use Cases (Tabbed) ───────────────────────── */}
-      <SectionWrapper className="bg-off-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl md:text-4xl text-navy">
+          <h2 className="text-center font-display text-3xl md:text-4xl text-white">
             Built for Every Level
           </h2>
           <div className="mt-12">
@@ -194,9 +194,9 @@ export default function HowItWorksPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Platform Features ───────────────────────── */}
-      <SectionWrapper className="bg-off-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-base py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl md:text-4xl text-navy">
+          <h2 className="text-center font-display text-3xl md:text-4xl text-white">
             Platform Features
           </h2>
 
@@ -204,17 +204,17 @@ export default function HowItWorksPage() {
             {features.map(({ Icon, title, description, bold }) => (
               <div
                 key={title}
-                className="rounded-xl bg-white p-6 border border-gray-200"
+                className="rounded-xl bg-white/5 backdrop-blur-md border border-white/10 p-6"
               >
                 <Icon className="h-8 w-8 text-gold" />
                 <h3
-                  className={`mt-4 font-display text-lg text-navy ${
+                  className={`mt-4 font-display text-lg text-white ${
                     bold ? 'font-bold' : ''
                   }`}
                 >
                   {title}
                 </h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-2 text-sm text-white/70 leading-relaxed">
                   {description}
                 </p>
               </div>
@@ -224,7 +224,7 @@ export default function HowItWorksPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── ROI Callout ───────────────────────── */}
-      <SectionWrapper className="bg-navy py-16 md:py-20">
+      <SectionWrapper className="bg-gradient-to-r from-dark-card via-dark-elevated to-dark-card py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-lg text-white">
             At $144 per user per year —
@@ -240,12 +240,12 @@ export default function HowItWorksPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Dual CTA ───────────────────────── */}
-      <SectionWrapper className="bg-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-3xl md:text-4xl text-navy">
+          <h2 className="font-display text-3xl md:text-4xl text-white">
             Ready to Get Started?
           </h2>
-          <p className="mt-4 text-gray-700">
+          <p className="mt-4 text-white/70">
             See how story-based learning can transform your team.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">

@@ -14,15 +14,15 @@ export default function AboutPage() {
   return (
     <main>
       {/* Hero */}
-      <SectionWrapper className="bg-off-white py-24 md:py-32">
+      <SectionWrapper className="bg-dark-surface py-24 md:py-32">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <span className="text-xs uppercase tracking-[0.2em] text-gold font-mono">
             About
           </span>
-          <h1 className="mt-4 font-display text-4xl md:text-5xl text-gray-900">
+          <h1 className="mt-4 font-display text-4xl md:text-5xl text-white">
             High Achievers. Lived Experiences. Actionable Lessons.
           </h1>
-          <p className="mt-6 text-lg text-gray-700 max-w-3xl mx-auto">
+          <p className="mt-6 text-lg text-white/70 max-w-3xl mx-auto">
             On This Topic was built by two women with unparalleled access to the
             world of elite professional sport.
           </p>
@@ -30,23 +30,23 @@ export default function AboutPage() {
       </SectionWrapper>
 
       {/* Founder Section */}
-      <SectionWrapper className="bg-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-base py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Karen DePodesta */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-200">
+            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10">
               <ImagePlaceholder
                 label="Karen DePodesta"
                 aspect="1/1"
                 className="w-32 h-32 rounded-full mx-auto mb-6"
               />
-              <h2 className="font-display text-2xl text-center">
+              <h2 className="font-display text-2xl text-center text-white">
                 Karen DePodesta
               </h2>
               <p className="text-gold text-center font-mono text-sm uppercase tracking-wider mt-1">
                 Co-Founder
               </p>
-              <p className="text-gray-700 leading-relaxed mt-4">
+              <p className="text-white/70 leading-relaxed mt-4">
                 Karen has spent over two decades immersed in the world of elite
                 professional sport, developing a rare perspective on what
                 separates high performers from the rest. Her access to NFL, MLB,
@@ -67,7 +67,7 @@ export default function AboutPage() {
                   href="https://www.linkedin.com/in/karendepodesta"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-navy hover:text-gold transition-colors"
+                  className="text-white/60 hover:text-gold transition-colors"
                   aria-label="Karen DePodesta on LinkedIn"
                 >
                   <svg
@@ -83,19 +83,19 @@ export default function AboutPage() {
             </div>
 
             {/* Michelle Tannenbaum */}
-            <div className="bg-white rounded-2xl p-8 border border-gray-200">
+            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10">
               <ImagePlaceholder
                 label="Michelle Tannenbaum"
                 aspect="1/1"
                 className="w-32 h-32 rounded-full mx-auto mb-6"
               />
-              <h2 className="font-display text-2xl text-center">
+              <h2 className="font-display text-2xl text-center text-white">
                 Michelle Tannenbaum
               </h2>
               <p className="text-gold text-center font-mono text-sm uppercase tracking-wider mt-1">
                 Co-Founder
               </p>
-              <p className="text-gray-700 leading-relaxed mt-4">
+              <p className="text-white/70 leading-relaxed mt-4">
                 Michelle has spent years inside the culture of
                 championship-level professional football, learning the
                 discipline, leadership, and performance standards that define
@@ -115,7 +115,7 @@ export default function AboutPage() {
                   href="https://www.linkedin.com/in/michelletannenbaum"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-navy hover:text-gold transition-colors"
+                  className="text-white/60 hover:text-gold transition-colors"
                   aria-label="Michelle Tannenbaum on LinkedIn"
                 >
                   <svg
@@ -134,16 +134,16 @@ export default function AboutPage() {
       </SectionWrapper>
 
       {/* Our Story */}
-      <SectionWrapper className="bg-off-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-6">
           <blockquote className="border-l-4 border-gold pl-8">
-            <p className="font-display text-2xl italic text-gray-900">
+            <p className="font-display text-2xl italic text-white">
               &ldquo;The greatest lessons in leadership aren&rsquo;t found in
               textbooks — they&rsquo;re lived, experienced, and told through
               stories.&rdquo;
             </p>
           </blockquote>
-          <div className="mt-12 space-y-6 text-gray-700 leading-relaxed text-lg">
+          <div className="mt-12 space-y-6 text-white/70 leading-relaxed text-lg">
             <p>
               Karen DePodesta and Michelle Tannenbaum didn&rsquo;t set out to
               build a learning platform. They set out to answer a question: why
@@ -171,7 +171,7 @@ export default function AboutPage() {
       </SectionWrapper>
 
       {/* By the Numbers */}
-      <SectionWrapper className="bg-navy py-16 md:py-20">
+      <SectionWrapper className="bg-dark-elevated py-16 md:py-20">
         <div className="mx-auto max-w-5xl px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <StatCounter value={50} suffix="+" label="Lessons Produced" />
@@ -197,18 +197,18 @@ export default function AboutPage() {
       </SectionWrapper>
 
       {/* Doing Good */}
-      <SectionWrapper className="bg-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-base py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="font-display text-3xl text-gray-900">
+              <h2 className="font-display text-3xl text-white">
                 Giving Back
               </h2>
-              <p className="mt-4 text-gray-700 text-lg">
+              <p className="mt-4 text-white/70 text-lg">
                 On This Topic is committed to making an impact beyond the
                 platform.
               </p>
-              <ul className="mt-6 space-y-4 text-gray-700">
+              <ul className="mt-6 space-y-4 text-white/70">
                 <li className="flex items-start gap-3">
                   <span className="mt-1.5 h-2 w-2 rounded-full bg-gold flex-shrink-0" />
                   <span>
@@ -238,7 +238,7 @@ export default function AboutPage() {
       </SectionWrapper>
 
       {/* CTA */}
-      <SectionWrapper className="bg-off-white py-20 md:py-28">
+      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <CTAButton href="/blog" variant="secondary">

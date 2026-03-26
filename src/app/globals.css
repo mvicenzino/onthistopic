@@ -7,6 +7,10 @@
   --color-gold: #C9A84C;
   --color-gold-light: #E8C97A;
   --color-gold-muted: #F5EDD6;
+  --color-dark-base: #0A1628;
+  --color-dark-surface: #111D32;
+  --color-dark-card: #162235;
+  --color-dark-elevated: #1A2940;
   --color-off-white: #F9F7F4;
   --color-gray-100: #F2F4F7;
   --color-gray-200: #E2E8F0;
@@ -26,13 +30,36 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
+.glass {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.glass-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 1rem;
+}
+
+.glass-gold {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.25);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-body);
-  color: var(--color-gray-900);
+  color: white;
+  background-color: var(--color-dark-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
