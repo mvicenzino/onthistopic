@@ -44,7 +44,7 @@ const steps = [
     number: 4,
     title: 'Apply It at Work',
     description:
-      'Every lesson connects to a real workplace behavior. Apply insights to your day-to-day work and track growth over time.',
+      'Every lesson connects to a real workplace behavior you can practice immediately. Apply insights to your day-to-day work, track growth over time, and build lasting habits that drive performance.',
     image: 'Apply at Work',
   },
 ]
