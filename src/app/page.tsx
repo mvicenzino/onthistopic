@@ -77,7 +77,7 @@ export default function HomePage() {
         {/* Gold radial glow behind headline */}
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[400px] md:w-[700px] md:h-[500px] gold-glow pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 md:pt-44 pb-20">
           <div className="max-w-5xl">
             {/* Staggered entrance with blur-to-clear */}
             <motion.h1
