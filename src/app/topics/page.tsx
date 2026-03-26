@@ -29,16 +29,16 @@ export default function TopicsPage() {
   return (
     <main>
       {/* Hero */}
-      <SectionWrapper className="bg-dark-surface py-24 md:py-32 relative overflow-hidden">
+      <SectionWrapper className="bg-cream py-24 md:py-32 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] gold-glow pointer-events-none" />
         <div className="mx-auto max-w-4xl px-6 text-center relative">
           <span className="text-xs uppercase tracking-[0.2em] text-gold font-mono">
             Topics
           </span>
-          <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-white">
+          <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-gray-900">
             Workplace Performance Topics
           </h1>
-          <p className="mt-6 text-lg text-white/70 max-w-3xl mx-auto">
+          <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
             Each topic reflects a core driver of workplace performance —
             explored through lessons earned in elite sport.
           </p>
@@ -46,7 +46,7 @@ export default function TopicsPage() {
       </SectionWrapper>
 
       {/* Topic Cluster Cards */}
-      <SectionWrapper className="bg-dark-base py-20 md:py-28">
+      <SectionWrapper className="bg-cream-dark py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-6 space-y-6">
           {topics.map((topic) => {
             const IconComponent = iconMap[topic.icon]
@@ -54,7 +54,7 @@ export default function TopicsPage() {
               <Link
                 key={topic.slug}
                 href={`/topics/${topic.slug}`}
-                className="group block rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-8 md:p-12 transition-all hover:border-gold/30 hover:shadow-[0_8px_40px_rgba(201,168,76,0.08)] hover:-translate-y-1"
+                className="group block rounded-2xl bg-navy border border-navy-light/20 p-8 md:p-12 transition-all hover:border-gold/30 hover:shadow-[0_8px_40px_rgba(201,168,76,0.08)] hover:-translate-y-1"
               >
                 <div className="h-1 w-24 bg-gold mb-6" />
                 {IconComponent && (
@@ -91,12 +91,12 @@ export default function TopicsPage() {
       </SectionWrapper>
 
       {/* Closing CTA */}
-      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
+      <SectionWrapper className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <h2 className="font-display text-2xl md:text-3xl text-white">
+          <h2 className="font-display text-2xl md:text-3xl text-gray-900">
             Every topic maps to a real challenge your team is facing.
           </h2>
-          <p className="mt-4 text-white/70 text-lg">
+          <p className="mt-4 text-gray-600 text-lg">
             Browse the full library or talk to us about building a custom
             learning path for your organization.
           </p>

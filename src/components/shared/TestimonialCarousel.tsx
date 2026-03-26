@@ -39,7 +39,7 @@ export function TestimonialCarousel() {
   return (
     <div className="relative max-w-4xl mx-auto">
       {/* Massive decorative quote mark */}
-      <div className="absolute -top-8 -left-4 text-[120px] md:text-[180px] font-display text-gold/20 leading-none select-none pointer-events-none" aria-hidden>
+      <div className="absolute -top-8 -left-4 text-[120px] md:text-[180px] font-display text-gold/30 leading-none select-none pointer-events-none" aria-hidden>
         &ldquo;
       </div>
 
@@ -53,18 +53,18 @@ export function TestimonialCarousel() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
           >
-            <blockquote className="text-2xl md:text-3xl lg:text-4xl font-display italic text-white leading-snug">
+            <blockquote className="text-2xl md:text-3xl lg:text-4xl font-display italic text-gray-900 leading-snug">
               &ldquo;{testimonials[current].quote}&rdquo;
             </blockquote>
             <div className="mt-8 flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-gold/15 flex items-center justify-center">
                 <span className="text-gold font-bold text-lg">
                   {testimonials[current].name[0]}
                 </span>
               </div>
               <div>
-                <div className="text-white font-semibold">{testimonials[current].name}</div>
-                <div className="text-white/50 font-mono text-sm">
+                <div className="text-gray-900 font-semibold">{testimonials[current].name}</div>
+                <div className="text-gray-500 font-mono text-sm">
                   {testimonials[current].role}, {testimonials[current].company}
                 </div>
               </div>
@@ -80,7 +80,7 @@ export function TestimonialCarousel() {
             key={i}
             onClick={() => setCurrent(i)}
             className={`h-2 rounded-full transition-all duration-300 ${
-              i === current ? 'w-8 bg-gold' : 'w-2 bg-white/20 hover:bg-white/40'
+              i === current ? 'w-8 bg-gold' : 'w-2 bg-gray-300 hover:bg-gray-400'
             }`}
             aria-label={`Show testimonial ${i + 1}`}
           />

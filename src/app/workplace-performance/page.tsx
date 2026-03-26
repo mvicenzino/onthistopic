@@ -71,7 +71,7 @@ const orgApplications = [
 export default function WorkplacePerformancePage() {
   return (
     <>
-      <SectionWrapper className="bg-dark-surface py-20 md:py-28 relative overflow-hidden">
+      <SectionWrapper className="bg-cream py-20 md:py-28 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] gold-glow pointer-events-none" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[250px_1fr]">
@@ -86,7 +86,7 @@ export default function WorkplacePerformancePage() {
                     <li key={item.id}>
                       <Link
                         href={`#${item.id}`}
-                        className="text-sm text-white/50 transition-colors hover:text-gold"
+                        className="text-sm text-gray-400 transition-colors hover:text-navy"
                       >
                         {item.label}
                       </Link>
@@ -100,21 +100,21 @@ export default function WorkplacePerformancePage() {
             <article className="max-w-3xl">
               {/* Author Byline */}
               <div className="mb-12">
-                <p className="text-sm text-white/40">
+                <p className="text-sm text-gray-400">
                   By Karen DePodesta &amp; Michelle Tannenbaum, Co-Founders, On
                   This Topic
                 </p>
-                <p className="mt-1 text-sm text-white/40">
+                <p className="mt-1 text-sm text-gray-400">
                   Published March 2026
                 </p>
               </div>
 
               {/* Section 1 */}
               <section id="what-is" className="mb-16">
-                <h2 className="font-display text-2xl font-bold text-white md:text-3xl lg:text-4xl">
+                <h2 className="font-display text-2xl font-bold text-gray-900 md:text-3xl lg:text-4xl">
                   What Is Workplace Performance Development?
                 </h2>
-                <p className="mt-6 font-body leading-relaxed text-white/70">
+                <p className="mt-6 font-body leading-relaxed text-gray-700">
                   Workplace performance development is a holistic approach to
                   building the skills, mindsets, and behaviors that drive results
                   in professional environments. Unlike traditional training
@@ -123,7 +123,7 @@ export default function WorkplacePerformancePage() {
                   — leadership, communication, resilience, decision-making, and
                   team dynamics.
                 </p>
-                <p className="mt-4 font-body leading-relaxed text-white/70">
+                <p className="mt-4 font-body leading-relaxed text-gray-700">
                   It recognizes that the gap between good teams and great teams
                   isn&apos;t usually about knowledge — it&apos;s about how people
                   show up, interact, and perform under pressure. Organizations
@@ -135,10 +135,10 @@ export default function WorkplacePerformancePage() {
 
               {/* Section 2 */}
               <section id="expanding" className="mb-16">
-                <h2 className="font-display text-2xl font-bold text-white md:text-3xl">
+                <h2 className="font-display text-2xl font-bold text-gray-900 md:text-3xl">
                   How It Expands Traditional Leadership Development
                 </h2>
-                <p className="mt-6 font-body leading-relaxed text-white/70">
+                <p className="mt-6 font-body leading-relaxed text-gray-700">
                   Traditional leadership development often relies on classroom
                   workshops, lengthy e-learning modules, or executive coaching
                   reserved for senior leaders. While these approaches have their
@@ -146,7 +146,7 @@ export default function WorkplacePerformancePage() {
                   scale, difficult to schedule, and often disconnected from the
                   day-to-day realities of work.
                 </p>
-                <p className="mt-4 font-body leading-relaxed text-white/70">
+                <p className="mt-4 font-body leading-relaxed text-gray-700">
                   Workplace performance development expands this model by making
                   development accessible to everyone — not just executives. It
                   emphasizes practical, applicable skills over abstract theory. It
@@ -158,10 +158,10 @@ export default function WorkplacePerformancePage() {
 
               {/* Section 3 */}
               <section id="elite-sport" className="mb-16">
-                <h2 className="font-display text-2xl font-bold text-white md:text-3xl">
+                <h2 className="font-display text-2xl font-bold text-gray-900 md:text-3xl">
                   Why Elite Sport Is a Powerful Lens
                 </h2>
-                <p className="mt-6 font-body leading-relaxed text-white/70">
+                <p className="mt-6 font-body leading-relaxed text-gray-700">
                   Elite sport is one of the most visible, high-stakes performance
                   environments in the world. Athletes, coaches, and executives in
                   professional sport face many of the same challenges that leaders
@@ -169,7 +169,7 @@ export default function WorkplacePerformancePage() {
                   pressure, managing diverse teams, navigating change, and
                   sustaining performance over time.
                 </p>
-                <p className="mt-4 font-body leading-relaxed text-white/70">
+                <p className="mt-4 font-body leading-relaxed text-gray-700">
                   The difference is that in sport, these moments play out on the
                   world&apos;s biggest stages, with real consequences and
                   immediate feedback. The lessons learned in these environments
@@ -179,7 +179,7 @@ export default function WorkplacePerformancePage() {
               </section>
 
               {/* Inline CTA */}
-              <div className="mb-16 rounded-xl bg-white/5 border border-white/10 p-6 md:p-8">
+              <div className="mb-16 rounded-xl bg-cream border border-black/5 p-6 md:p-8">
                 <CTAButton href="/sample-lesson" variant="ghost">
                   Explore a Sample Lesson
                 </CTAButton>
@@ -187,10 +187,10 @@ export default function WorkplacePerformancePage() {
 
               {/* Section 4 */}
               <section id="core-drivers" className="mb-16">
-                <h2 className="font-display text-2xl font-bold text-white md:text-3xl">
+                <h2 className="font-display text-2xl font-bold text-gray-900 md:text-3xl">
                   The Core Drivers of Workplace Performance
                 </h2>
-                <p className="mt-6 font-body leading-relaxed text-white/70">
+                <p className="mt-6 font-body leading-relaxed text-gray-700">
                   On This Topic organizes its content around five core drivers of
                   workplace performance:
                 </p>
@@ -198,14 +198,14 @@ export default function WorkplacePerformancePage() {
                   {coreDrivers.map((driver) => (
                     <li key={driver.name} className="flex items-start gap-3">
                       <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-gold" />
-                      <span className="font-body text-white/70">
-                        <strong className="text-gold">{driver.name}</strong> —{' '}
+                      <span className="font-body text-gray-700">
+                        <strong className="text-navy">{driver.name}</strong> —{' '}
                         {driver.description}
                       </span>
                     </li>
                   ))}
                 </ul>
-                <p className="mt-6 font-body leading-relaxed text-white/70">
+                <p className="mt-6 font-body leading-relaxed text-gray-700">
                   Each driver maps to real challenges that teams and leaders face
                   every day. Together, they provide a comprehensive framework for
                   developing the skills that matter most.
@@ -214,18 +214,18 @@ export default function WorkplacePerformancePage() {
 
               {/* Section 5 */}
               <section id="how-organizations" className="mb-16">
-                <h2 className="font-display text-2xl font-bold text-white md:text-3xl">
+                <h2 className="font-display text-2xl font-bold text-gray-900 md:text-3xl">
                   How Organizations Apply It
                 </h2>
-                <p className="mt-6 font-body leading-relaxed text-white/70">
+                <p className="mt-6 font-body leading-relaxed text-gray-700">
                   Organizations use On This Topic in a variety of ways:
                 </p>
                 <ul className="mt-6 space-y-4">
                   {orgApplications.map((app) => (
                     <li key={app.name} className="flex items-start gap-3">
                       <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-gold" />
-                      <span className="font-body text-white/70">
-                        <strong className="text-gold">{app.name}</strong> —{' '}
+                      <span className="font-body text-gray-700">
+                        <strong className="text-navy">{app.name}</strong> —{' '}
                         {app.description}
                       </span>
                     </li>
@@ -235,17 +235,17 @@ export default function WorkplacePerformancePage() {
 
               {/* Section 6 */}
               <section id="story-based" className="mb-16">
-                <h2 className="font-display text-2xl font-bold text-white md:text-3xl">
+                <h2 className="font-display text-2xl font-bold text-gray-900 md:text-3xl">
                   Story-Based Learning That Drives Retention
                 </h2>
-                <p className="mt-6 font-body leading-relaxed text-white/70">
+                <p className="mt-6 font-body leading-relaxed text-gray-700">
                   Research consistently shows that stories are one of the most
                   effective vehicles for learning and retention. Story-based
                   learning activates multiple areas of the brain — engaging
                   emotion, memory, and imagination in ways that facts and bullet
                   points simply can&apos;t.
                 </p>
-                <p className="mt-4 font-body leading-relaxed text-white/70">
+                <p className="mt-4 font-body leading-relaxed text-gray-700">
                   On This Topic leverages this science by delivering every lesson
                   as a first-person story from an elite performer. Learners
                   don&apos;t just absorb information — they experience it through
@@ -253,7 +253,7 @@ export default function WorkplacePerformancePage() {
                   better recall compared to traditional training formats and
                   ensures that lessons stick long after they&apos;re completed.
                 </p>
-                <p className="mt-4 font-body leading-relaxed text-white/70">
+                <p className="mt-4 font-body leading-relaxed text-gray-700">
                   Combined with reflection prompts, discussion guides, and
                   practical application frameworks, On This Topic creates a
                   complete learning experience that goes beyond consumption to
@@ -266,7 +266,7 @@ export default function WorkplacePerformancePage() {
       </SectionWrapper>
 
       {/* ───────────────────────── End CTA ───────────────────────── */}
-      <SectionWrapper className="bg-dark-card py-20 md:py-28">
+      <SectionWrapper className="bg-navy py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl text-white">
             See How Organizations Use On This Topic

@@ -97,16 +97,16 @@ export default function HowItWorksPage() {
   return (
     <>
       {/* ───────────────────────── Hero ───────────────────────── */}
-      <SectionWrapper className="bg-dark-surface py-20 md:py-28 relative overflow-hidden">
+      <SectionWrapper className="bg-cream py-20 md:py-28 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] gold-glow pointer-events-none" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative">
           <p className="text-sm font-mono uppercase tracking-[0.2em] text-gold">
             How It Works
           </p>
-          <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-white">
+          <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-gray-900">
             A Simple, Flexible Learning Experience
           </h1>
-          <p className="mt-6 mx-auto max-w-2xl text-lg text-white/70">
+          <p className="mt-6 mx-auto max-w-2xl text-lg text-gray-600">
             Designed to fit into real workdays — for individuals, teams, and
             organizations.
           </p>
@@ -114,7 +114,7 @@ export default function HowItWorksPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── 4-Step Process ───────────────────────── */}
-      <SectionWrapper className="bg-dark-base py-20 md:py-28">
+      <SectionWrapper className="bg-white py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Desktop horizontal timeline */}
           <div className="hidden md:block">
@@ -136,10 +136,10 @@ export default function HowItWorksPage() {
             <div className="mt-8 grid grid-cols-4 gap-8">
               {steps.map((step) => (
                 <div key={step.number}>
-                  <h3 className="font-display text-xl text-white">
+                  <h3 className="font-display text-xl text-gray-900">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-sm text-white/70 leading-relaxed">
+                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">
                     {step.description}
                   </p>
                   <div className="mt-4">
@@ -166,10 +166,10 @@ export default function HowItWorksPage() {
 
                 {/* Content */}
                 <div className="pb-4">
-                  <h3 className="font-display text-xl text-white">
+                  <h3 className="font-display text-xl text-gray-900">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-sm text-white/70 leading-relaxed">
+                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">
                     {step.description}
                   </p>
                   <div className="mt-4">
@@ -183,9 +183,9 @@ export default function HowItWorksPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Use Cases (Tabbed) ───────────────────────── */}
-      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
+      <SectionWrapper className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl md:text-4xl text-white">
+          <h2 className="text-center font-display text-3xl md:text-4xl text-gray-900">
             Built for Every Level
           </h2>
           <div className="mt-12">
@@ -195,9 +195,9 @@ export default function HowItWorksPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Platform Features ───────────────────────── */}
-      <SectionWrapper className="bg-dark-base py-20 md:py-28">
+      <SectionWrapper className="bg-white py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl md:text-4xl text-white">
+          <h2 className="text-center font-display text-3xl md:text-4xl text-gray-900">
             Platform Features
           </h2>
 
@@ -205,17 +205,17 @@ export default function HowItWorksPage() {
             {features.map(({ Icon, title, description, bold }) => (
               <div
                 key={title}
-                className="rounded-xl bg-white/5 backdrop-blur-md border border-white/10 p-6"
+                className="rounded-xl bg-cream border border-black/5 shadow-sm p-6"
               >
                 <Icon className="h-8 w-8 text-gold" />
                 <h3
-                  className={`mt-4 font-display text-lg text-white ${
+                  className={`mt-4 font-display text-lg text-gray-900 ${
                     bold ? 'font-bold' : ''
                   }`}
                 >
                   {title}
                 </h3>
-                <p className="mt-2 text-sm text-white/70 leading-relaxed">
+                <p className="mt-2 text-sm text-gray-600 leading-relaxed">
                   {description}
                 </p>
               </div>
@@ -225,7 +225,7 @@ export default function HowItWorksPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── ROI Callout ───────────────────────── */}
-      <SectionWrapper className="bg-gradient-to-r from-dark-card via-dark-elevated to-dark-card py-16 md:py-20">
+      <SectionWrapper className="bg-navy py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-lg text-white">
             At $144 per user per year —
@@ -241,12 +241,12 @@ export default function HowItWorksPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Dual CTA ───────────────────────── */}
-      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
+      <SectionWrapper className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-3xl md:text-4xl text-white">
+          <h2 className="font-display text-3xl md:text-4xl text-gray-900">
             Ready to Get Started?
           </h2>
-          <p className="mt-4 text-white/70">
+          <p className="mt-4 text-gray-600">
             See how story-based learning can transform your team.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">

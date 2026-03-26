@@ -84,16 +84,16 @@ export default function WhyItWorksPage() {
   return (
     <>
       {/* ───────────────────────── Hero ───────────────────────── */}
-      <SectionWrapper className="bg-dark-surface py-20 md:py-28 relative overflow-hidden">
+      <SectionWrapper className="bg-cream py-20 md:py-28 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] gold-glow pointer-events-none" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative">
           <p className="text-sm font-mono uppercase tracking-[0.2em] text-gold">
             Why It Works
           </p>
-          <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-white">
+          <h1 className="mt-4 font-display text-4xl md:text-5xl lg:text-6xl text-gray-900">
             The Science and Sport Behind Every Lesson
           </h1>
-          <p className="mt-6 mx-auto max-w-2xl text-lg text-white/70">
+          <p className="mt-6 mx-auto max-w-2xl text-lg text-gray-600">
             We combine proven learning science with first-person stories from
             elite sport — creating lessons that stick, scale, and translate
             directly to the workplace.
@@ -102,7 +102,7 @@ export default function WhyItWorksPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── 4 Pillars — Alternating Layout ───────────────────────── */}
-      <SectionWrapper className="bg-dark-base py-20 md:py-28">
+      <SectionWrapper className="bg-white py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-20 md:space-y-28">
           {pillars.map((pillar) => {
             const imageBlock = (
@@ -116,10 +116,10 @@ export default function WhyItWorksPage() {
                 <p className="text-xs font-mono uppercase tracking-[0.2em] text-gold">
                   {pillar.badge}
                 </p>
-                <h3 className="mt-3 font-display text-3xl text-white">
+                <h3 className="mt-3 font-display text-3xl text-gray-900">
                   {pillar.title}
                 </h3>
-                <p className="mt-4 text-white/70 leading-relaxed">
+                <p className="mt-4 text-gray-600 leading-relaxed">
                   {pillar.description}
                 </p>
                 <div className="mt-6 flex flex-wrap gap-2">
@@ -158,14 +158,14 @@ export default function WhyItWorksPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Learning Science Quote Block ───────────────────────── */}
-      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
+      <SectionWrapper className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <blockquote className="border-l-4 border-gold pl-8">
-            <p className="font-display text-xl md:text-2xl italic text-white leading-relaxed">
+            <p className="font-display text-xl md:text-2xl italic text-gray-900 leading-relaxed">
               &ldquo;Story-based learning increases knowledge retention by up to
               65% compared to lecture-style formats.&rdquo;
             </p>
-            <footer className="mt-4 text-white/40 text-sm">
+            <footer className="mt-4 text-gray-400 text-sm">
               — Learning &amp; Development Research
             </footer>
           </blockquote>
@@ -173,9 +173,9 @@ export default function WhyItWorksPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Learning Framework ───────────────────────── */}
-      <SectionWrapper className="bg-dark-base py-20 md:py-28">
+      <SectionWrapper className="bg-white py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl md:text-4xl text-white">
+          <h2 className="text-center font-display text-3xl md:text-4xl text-gray-900">
             The On This Topic Learning Framework
           </h2>
 
@@ -193,16 +193,16 @@ export default function WhyItWorksPage() {
 
                   {/* Icon */}
                   <div className="mt-4 flex justify-center">
-                    <Icon className="h-6 w-6 text-gold" />
+                    <Icon className="h-6 w-6 text-navy" />
                   </div>
 
                   {/* Name */}
-                  <h3 className="mt-3 font-display text-xl text-white">
+                  <h3 className="mt-3 font-display text-xl text-gray-900">
                     {name}
                   </h3>
 
                   {/* Description */}
-                  <p className="mt-2 text-sm text-white/70 leading-relaxed">
+                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">
                     {description}
                   </p>
                 </div>
@@ -213,7 +213,7 @@ export default function WhyItWorksPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── CTA ───────────────────────── */}
-      <SectionWrapper className="bg-dark-card py-20 md:py-28">
+      <SectionWrapper className="bg-navy py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-3xl text-white">
             See It in Action

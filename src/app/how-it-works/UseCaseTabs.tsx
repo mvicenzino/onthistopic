@@ -74,8 +74,8 @@ export function UseCaseTabs() {
             onClick={() => setActive(key)}
             className={`rounded-full px-6 py-2.5 text-sm font-medium transition-colors ${
               active === key
-                ? 'bg-gold/20 text-gold border border-gold/30'
-                : 'bg-white/5 text-white/60 hover:bg-white/10'
+                ? 'bg-navy text-white'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
             }`}
           >
             {label}
@@ -84,19 +84,19 @@ export function UseCaseTabs() {
       </div>
 
       {/* Tab content */}
-      <div className="mt-10 mx-auto max-w-2xl rounded-xl bg-white/5 backdrop-blur-md border border-white/10 p-8">
+      <div className="mt-10 mx-auto max-w-2xl rounded-xl bg-white border border-black/5 shadow-sm p-8">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20">
-            <Icon className="h-5 w-5 text-gold" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/10">
+            <Icon className="h-5 w-5 text-navy" />
           </div>
-          <h3 className="font-display text-2xl text-gold">{heading}</h3>
+          <h3 className="font-display text-2xl text-navy">{heading}</h3>
         </div>
 
         <ul className="mt-6 space-y-3">
           {bullets.map((bullet) => (
             <li key={bullet} className="flex items-start gap-3">
-              <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
-              <span className="text-white/70">{bullet}</span>
+              <span className="mt-1.5 block h-1.5 w-1.5 shrink-0 rounded-full bg-navy" />
+              <span className="text-gray-600">{bullet}</span>
             </li>
           ))}
         </ul>

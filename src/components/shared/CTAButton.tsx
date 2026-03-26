@@ -18,13 +18,13 @@ interface CTAButtonProps {
 
 const variantStyles: Record<Variant, (dark: boolean) => string> = {
   primary: () =>
-    'bg-gold text-navy-dark font-bold shadow-lg hover:bg-gold-light hover:shadow-[0_0_30px_rgba(201,168,76,0.4)] active:scale-[0.98]',
+    'bg-navy text-white font-bold shadow-lg hover:bg-navy-light hover:shadow-[0_0_30px_rgba(27,46,75,0.3)] active:scale-[0.98]',
   secondary: () =>
-    'border-2 border-white/20 bg-white/5 text-white backdrop-blur-xl hover:bg-white/10 hover:border-white/30',
+    'border-2 border-navy/20 bg-transparent text-navy hover:bg-navy/5 hover:border-navy/40',
   ghost: () =>
-    'text-gold hover:text-gold-light',
+    'text-navy hover:text-navy-light',
   premium: () =>
-    'bg-gold text-navy-dark font-black shadow-[0_0_40px_rgba(201,168,76,0.3)] hover:shadow-[0_0_60px_rgba(201,168,76,0.5)] hover:bg-gold-light active:scale-[0.98]',
+    'bg-navy text-white font-black shadow-[0_0_40px_rgba(27,46,75,0.2)] hover:shadow-[0_0_60px_rgba(27,46,75,0.3)] hover:bg-navy-light active:scale-[0.98]',
 }
 
 const sizeStyles: Record<Size, string> = {

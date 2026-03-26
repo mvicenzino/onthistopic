@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from 'react'
 
 interface EmailCaptureProps {
-  variant?: 'dark' | 'gold'
+  variant?: 'dark' | 'gold' | 'light'
 }
 
 export function EmailCapture({ variant = 'dark' }: EmailCaptureProps) {
@@ -25,7 +25,7 @@ export function EmailCapture({ variant = 'dark' }: EmailCaptureProps) {
 
   if (submitted) {
     return (
-      <p className={`text-sm font-medium ${variant === 'gold' ? 'text-navy/70' : 'text-white/70'}`}>
+      <p className={`text-sm font-medium ${variant === 'gold' ? 'text-navy/70' : variant === 'light' ? 'text-gray-600' : 'text-white/70'}`}>
         You&apos;re in! Watch for our next update.
       </p>
     )
@@ -44,6 +44,8 @@ export function EmailCapture({ variant = 'dark' }: EmailCaptureProps) {
           className={`w-full rounded-full px-4 py-3 text-sm transition-colors focus:outline-none focus:ring-2 ${
             variant === 'gold'
               ? 'bg-navy-dark/10 border border-navy/20 text-navy-dark placeholder:text-navy/50 focus:ring-navy/30 focus:border-navy'
+              : variant === 'light'
+              ? 'bg-gray-100 border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:ring-gold focus:border-gold'
               : 'bg-white/10 border border-white/10 text-white placeholder:text-white/50 focus:ring-gold focus:border-gold'
           }`}
         />
@@ -54,6 +56,8 @@ export function EmailCapture({ variant = 'dark' }: EmailCaptureProps) {
         className={`shrink-0 rounded-full px-6 py-3 text-sm font-semibold transition-colors ${
           variant === 'gold'
             ? 'bg-navy-dark text-gold font-bold hover:bg-navy'
+            : variant === 'light'
+            ? 'bg-navy text-white font-bold hover:bg-navy-dark'
             : 'bg-gold text-navy-dark font-bold hover:bg-gold-light'
         }`}
       >

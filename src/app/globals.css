@@ -11,6 +11,10 @@
   --color-dark-surface: #111D32;
   --color-dark-card: #162235;
   --color-dark-elevated: #1A2940;
+  --color-cream: #FAF8F5;
+  --color-cream-dark: #F2EDE7;
+  --color-warm-gray: #E8E2DA;
+  --color-slate: #3D4F5F;
   --color-ice-blue: #A8C4E0;
   --color-gold-deep: #B8952F;
   --color-off-white: #F9F7F4;
@@ -41,23 +45,23 @@
 .glass {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
 .glass-card {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0.06);
   border-radius: 1rem;
 }
 
 .glass-gold {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  background: rgba(201,168,76,0.15);
-  border: 1px solid rgba(201,168,76,0.25);
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.15);
 }
 
 .gold-glow {
@@ -78,8 +82,8 @@
   inset: 0;
   opacity: 0.03;
   background-image:
-    linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
@@ -97,8 +101,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  color: white;
-  background-color: var(--color-dark-base);
+  color: var(--color-gray-900);
+  background-color: var(--color-cream);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

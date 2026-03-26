@@ -36,8 +36,8 @@ export function SubTopicFilter({ subTopics, lessons }: SubTopicFilterProps) {
             onClick={() => setActiveFilter(chip)}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
               activeFilter === chip
-                ? 'bg-gold/20 text-gold border border-gold/30'
-                : 'bg-white/5 text-white/60 hover:bg-white/10'
+                ? 'bg-navy text-white'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
             }`}
           >
             {chip}
@@ -59,7 +59,7 @@ export function SubTopicFilter({ subTopics, lessons }: SubTopicFilterProps) {
       </div>
 
       {filteredLessons.length === 0 && (
-        <p className="text-center text-white/50 py-12">
+        <p className="text-center text-gray-500 py-12">
           No lessons found for this sub-topic.
         </p>
       )}

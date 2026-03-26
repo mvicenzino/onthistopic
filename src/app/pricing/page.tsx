@@ -92,15 +92,15 @@ export default function PricingPage() {
   return (
     <>
       {/* ───────────────────────── Hero ───────────────────────── */}
-      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
+      <SectionWrapper className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <p className="font-mono text-sm uppercase tracking-widest text-gold">
             Pricing
           </p>
-          <h1 className="mt-3 font-display text-4xl font-bold text-white md:text-5xl">
+          <h1 className="mt-3 font-display text-4xl font-bold text-gray-900 md:text-5xl">
             Organizational Licensing
           </h1>
-          <p className="mt-4 text-lg text-white/70">
+          <p className="mt-4 text-lg text-gray-600">
             Transparent, per-participant annual pricing. No hidden fees. No
             &ldquo;contact us for a quote.&rdquo;
           </p>
@@ -108,7 +108,7 @@ export default function PricingPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Pricing Tiers ───────────────────────── */}
-      <SectionWrapper className="bg-dark-base py-20 md:py-28">
+      <SectionWrapper className="bg-white py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {tiers.map((tier) => (
@@ -116,8 +116,8 @@ export default function PricingPage() {
                 key={tier.name}
                 className={`relative rounded-2xl border p-8 ${
                   tier.popular
-                    ? 'border-2 border-gold bg-gradient-to-b from-gold/10 to-dark-card md:scale-105 md:z-10 shadow-[0_0_30px_rgba(201,168,76,0.15)]'
-                    : 'border-white/10'
+                    ? 'border-2 border-gold bg-navy md:scale-105 md:z-10 shadow-[0_0_30px_rgba(201,168,76,0.15)]'
+                    : 'border-gray-200 bg-white'
                 }`}
               >
                 {tier.popular && (
@@ -125,21 +125,21 @@ export default function PricingPage() {
                     Most Popular
                   </span>
                 )}
-                <h3 className="font-display text-xl text-white">{tier.name}</h3>
-                <p className="mt-1 text-sm text-white/50">{tier.range}</p>
+                <h3 className={`font-display text-xl ${tier.popular ? 'text-white' : 'text-gray-900'}`}>{tier.name}</h3>
+                <p className={`mt-1 text-sm ${tier.popular ? 'text-white/50' : 'text-gray-500'}`}>{tier.range}</p>
                 <div className="mt-6">
-                  <span className={`font-display font-bold text-white ${tier.popular ? 'text-5xl md:text-6xl' : 'text-4xl'}`}>
+                  <span className={`font-display font-bold ${tier.popular ? 'text-white text-5xl md:text-6xl' : 'text-gray-900 text-4xl'}`}>
                     ${tier.price}
                   </span>
-                  <span className="text-sm text-white/50">/participant</span>
-                  <p className="text-sm text-white/50">per year</p>
+                  <span className={`text-sm ${tier.popular ? 'text-white/50' : 'text-gray-500'}`}>/participant</span>
+                  <p className={`text-sm ${tier.popular ? 'text-white/50' : 'text-gray-500'}`}>per year</p>
                 </div>
-                <hr className="my-6 border-white/10" />
+                <hr className={`my-6 ${tier.popular ? 'border-white/10' : 'border-gray-200'}`} />
                 <ul className="space-y-3">
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                      <span className="text-sm text-white/70">{feature}</span>
+                      <span className={`text-sm ${tier.popular ? 'text-white/70' : 'text-gray-600'}`}>{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -160,18 +160,18 @@ export default function PricingPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── ROI Calculator ───────────────────────── */}
-      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
+      <SectionWrapper className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center font-display text-3xl md:text-4xl text-white">
+          <h2 className="text-center font-display text-3xl md:text-4xl text-gray-900">
             Calculate Your Investment
           </h2>
-          <div className="mt-10 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 p-8">
+          <div className="mt-10 rounded-2xl bg-white border border-gray-200 shadow-sm p-8">
             <label
               htmlFor="employee-slider"
-              className="block text-sm font-medium text-white/70"
+              className="block text-sm font-medium text-gray-600"
             >
               Number of participants:{' '}
-              <span className="font-mono font-bold text-white">{employees}</span>
+              <span className="font-mono font-bold text-gray-900">{employees}</span>
             </label>
             <input
               id="employee-slider"
@@ -183,19 +183,19 @@ export default function PricingPage() {
               onChange={(e) => setEmployees(Number(e.target.value))}
               className="mt-4 w-full accent-gold"
             />
-            <div className="mt-2 flex justify-between text-xs text-white/50">
+            <div className="mt-2 flex justify-between text-xs text-gray-500">
               <span>25</span>
               <span>1,000</span>
             </div>
 
             <div className="mt-8 text-center">
-              <p className="font-display text-3xl font-bold text-white">
+              <p className="font-display text-3xl font-bold text-gray-900">
                 Annual Investment: ${formatNumber(annual)}
               </p>
               <p className="mt-2 font-mono text-gold">
                 ${monthly} / employee / month
               </p>
-              <p className="mt-2 text-sm text-white/50">
+              <p className="mt-2 text-sm text-gray-500">
                 {getTierName(employees)} tier
               </p>
             </div>
@@ -204,13 +204,13 @@ export default function PricingPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── 30-Day Pilot ───────────────────────── */}
-      <SectionWrapper className="bg-dark-base py-20 md:py-28">
+      <SectionWrapper className="bg-white py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl bg-gold/10 border border-gold/20 p-8 text-center md:p-12">
-            <h2 className="font-display text-2xl font-bold text-white">
+            <h2 className="font-display text-2xl font-bold text-gray-900">
               Start with a 30-Day Team Pilot
             </h2>
-            <p className="mt-3 text-white/70">
+            <p className="mt-3 text-gray-600">
               Test On This Topic with up to 25 users before committing. No
               obligation.
             </p>
@@ -224,9 +224,9 @@ export default function PricingPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Nonprofit Note ───────────────────────── */}
-      <SectionWrapper className="bg-dark-base pb-16 text-center">
+      <SectionWrapper className="bg-white pb-16 text-center">
         <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
-          <p className="text-white/70">
+          <p className="text-gray-600">
             Nonprofits: Custom pricing available.
           </p>
           <p className="mt-1">
@@ -242,7 +242,7 @@ export default function PricingPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Testimonials ───────────────────────── */}
-      <SectionWrapper className="bg-dark-surface py-20 md:py-28">
+      <SectionWrapper className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <TestimonialCard
@@ -262,9 +262,9 @@ export default function PricingPage() {
       </SectionWrapper>
 
       {/* ───────────────────────── Contact Form ───────────────────────── */}
-      <SectionWrapper className="bg-dark-base py-20 md:py-28">
+      <SectionWrapper className="bg-white py-20 md:py-28">
         <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
-          <h2 className="mb-8 text-center font-display text-2xl text-white">
+          <h2 className="mb-8 text-center font-display text-2xl text-gray-900">
             Ready to get started?
           </h2>
           <ContactForm variant="compact" />
