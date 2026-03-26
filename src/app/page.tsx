@@ -87,7 +87,7 @@ export default function HomePage() {
               transition={{ duration: 0.8, ease: 'easeOut' }}
             >
               Leadership Lessons{' '}
-              <span className="text-gold">Earned</span> on the
+              <span className="text-gold">Earned</span>{' '}on the{' '}
               World&rsquo;s Biggest Stages.
             </motion.h1>
 
