@@ -100,7 +100,7 @@ export default function HomePage() {
           <div className="max-w-5xl">
             {/* Staggered entrance with blur-to-clear */}
             <motion.h1
-              className="font-display font-black text-white text-[2rem] sm:text-4xl md:text-5xl lg:text-7xl xl:text-[110px] leading-[1] sm:leading-[0.9] tracking-tight"
+              className="font-display font-black text-white text-[2rem] sm:text-4xl md:text-5xl lg:text-7xl xl:text-[110px] leading-[1.15] sm:leading-[0.9] tracking-tight"
               initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -121,17 +121,37 @@ export default function HomePage() {
             </motion.p>
 
             <motion.div
-              className="mt-6 md:mt-10 flex flex-col sm:flex-row gap-3 md:gap-4"
+              className="mt-6 md:mt-10 flex flex-row gap-3 md:gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <CTAButton href="/sample-lesson" variant="premium" size="lg">
+              {/* Desktop: large solid buttons. Mobile: compact glass buttons */}
+              <a
+                href="/sample-lesson"
+                className="hidden md:inline-flex items-center font-black rounded-full px-8 py-4 text-lg bg-navy text-white shadow-[0_0_40px_rgba(27,46,75,0.3)] hover:shadow-[0_0_60px_rgba(27,46,75,0.5)] hover:bg-navy-light active:scale-[0.98] transition-all duration-300"
+              >
                 Watch a Sample Lesson
-              </CTAButton>
-              <CTAButton href="/contact" variant="primary" size="lg">
+              </a>
+              <a
+                href="/contact"
+                className="hidden md:inline-flex items-center font-bold rounded-full px-8 py-4 text-lg bg-navy text-white shadow-lg hover:bg-navy-light hover:shadow-[0_0_30px_rgba(27,46,75,0.4)] active:scale-[0.98] transition-all duration-300"
+              >
                 Book a Demo
-              </CTAButton>
+              </a>
+              {/* Mobile: compact liquid glass buttons */}
+              <a
+                href="/sample-lesson"
+                className="md:hidden inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold backdrop-blur-xl bg-white/10 border border-white/20 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] hover:bg-white/20 active:scale-[0.97] transition-all duration-300"
+              >
+                Watch a Sample Lesson
+              </a>
+              <a
+                href="/contact"
+                className="md:hidden inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold backdrop-blur-xl bg-gold/15 border border-gold/25 text-gold shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] hover:bg-gold/25 hover:shadow-[0_0_15px_rgba(201,168,76,0.2)] active:scale-[0.97] transition-all duration-300"
+              >
+                Book a Demo
+              </a>
             </motion.div>
 
             <motion.p
