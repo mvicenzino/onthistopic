@@ -129,7 +129,7 @@ export default function HomePage() {
               {/* Desktop: large solid buttons. Mobile: compact glass buttons */}
               <a
                 href="/sample-lesson"
-                className="hidden md:inline-flex items-center font-black rounded-full px-8 py-4 text-lg bg-navy text-white shadow-[0_0_40px_rgba(27,46,75,0.3)] hover:shadow-[0_0_60px_rgba(27,46,75,0.5)] hover:bg-navy-light active:scale-[0.98] transition-all duration-300"
+                className="hidden md:inline-flex items-center font-semibold rounded-full px-8 py-4 text-lg backdrop-blur-xl bg-white/10 border border-white/20 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_0_30px_rgba(255,255,255,0.05)] hover:bg-white/20 hover:border-white/30 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_0_40px_rgba(255,255,255,0.08)] active:scale-[0.98] transition-all duration-300"
               >
                 Watch a Sample Lesson
               </a>
